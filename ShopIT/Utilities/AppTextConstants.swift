@@ -15,5 +15,7 @@ struct AppTextConstants {
         static let secondOnboardSubTitle = NSLocalizedString("Payment is the transfer of money services in exchange produtc or Payments typically made terms agreed", comment: "")
         static let thirdOnboardTitle = NSLocalizedString("Get Your Order", comment: "")
         static let thirdOnboardSubTitle = NSLocalizedString("Business or commerce an order is a stated intention either spoken to engage in a cemmercial transaction specific products", comment: "")
+        static let skipText = NSLocalizedString("Skip", comment: "")
+        static let getStartedText = NSLocalizedString("Get Started", comment: "")
     }
 }

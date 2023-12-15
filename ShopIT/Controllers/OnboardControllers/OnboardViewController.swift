@@ -18,7 +18,7 @@ class OnboardViewController: UIViewController {
     private var onboardImage: UIImageView!
     private var titleLabel: CustomLabel!
     private var subTitleLabel: CustomLabel!
-    private let startButton: PrimaryButton = PrimaryButton(title: "Get Started")
+    private let startButton: PrimaryButton = PrimaryButton(title: AppTextConstants.OnboardViewController.getStartedText)
     private var isLastPage = false
     var delegate: OnboardViewControllerDelegate?
     
@@ -31,9 +31,7 @@ class OnboardViewController: UIViewController {
          subTitleLabel = CustomLabel(labelType: .subTitle, text: subTitle)
          
     }
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

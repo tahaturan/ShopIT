@@ -21,7 +21,7 @@ class WelcomeViewController: UIPageViewController {
     }()
     private let skipButton: UIButton = {
        let button = UIButton()
-        button.setTitle("Skip", for: .normal)
+        button.setTitle(AppTextConstants.OnboardViewController.skipText, for: .normal)
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         return button
