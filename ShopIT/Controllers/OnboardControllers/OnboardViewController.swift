@@ -49,6 +49,7 @@ class OnboardViewController: UIViewController {
 extension OnboardViewController {
     //Setup UI
     private func setupUI() {
+        navigationController?.navigationBar.isHidden = true
         view.backgroundColor = .white
         view.addSubview(onboardImage)
         view.addSubview(titleLabel)

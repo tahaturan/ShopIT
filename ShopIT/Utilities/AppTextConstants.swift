@@ -18,4 +18,13 @@ struct AppTextConstants {
         static let skipText = NSLocalizedString("Skip", comment: "")
         static let getStartedText = NSLocalizedString("Get Started", comment: "")
     }
+    
+    struct LoginViewController {
+        static let title = NSLocalizedString("Log in", comment: "")
+    }
+    struct CustomTextField {
+        static let email = NSLocalizedString("E-mail", comment: "")
+        static let name = NSLocalizedString("Name", comment: "")
+        static let password = NSLocalizedString("Password", comment: "")
+    }
 }

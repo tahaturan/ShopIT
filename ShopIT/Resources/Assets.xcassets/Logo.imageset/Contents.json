@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "DALL_E_2023-12-15_05.17.53_-_A_logo_for_an_e-commerce_application__featuring_orange_as_the_main_color_on_a_white_background._The_design_should_be_modern_and_versatile__suitable_fo-removebg-preview.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -14,11 +14,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
+        let hasComplatedOnboarding = UserDefaults.standard.bool(forKey: "hasCompletedOnboarding")
         
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            let onboardingViewController = WelcomeViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal)
-            window.rootViewController = onboardingViewController
+            if hasComplatedOnboarding {
+                
+                window.rootViewController = UINavigationController(rootViewController: LoginViewController())
+            }else{
+                let onboardingViewController = WelcomeViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal)
+                window.rootViewController = UINavigationController(rootViewController: onboardingViewController)
+            }
+            
             self.window = window
             window.makeKeyAndVisible()
         }

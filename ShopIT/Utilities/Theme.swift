@@ -19,5 +19,13 @@ enum Theme {
     enum Size {
         static let primaryButtonCornerRadius: CGFloat = 30
         static let primaryButtonHeight: CGFloat = 60
+        static let defaultTextfieldCornerRadius: CGFloat = 10
+        static let defaultTextFieldHeight: CGFloat = 50
+    }
+    
+    enum IconName {
+        static let email: String = "envelope"
+        static let person: String = "person"
+        static let password: String = "lock"
     }
 }
