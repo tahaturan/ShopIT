@@ -25,6 +25,10 @@ struct AppTextConstants {
         static let loginText = NSLocalizedString("Log in", comment: "")
         static let signUpText = NSLocalizedString("Sign Up", comment: "")
         static let haveAccountText = NSLocalizedString("Don't have an account? ", comment: "")
+        static let alreadyHaveAccountText = NSLocalizedString("Already have an account? ", comment: "")
+        static let termsContionsText = NSLocalizedString("Terms & Conditions", comment: "")
+        static let acceptAllText = NSLocalizedString("I accept all the ", comment: "")
+        
     }
     struct CustomTextField {
         static let email = NSLocalizedString("E-mail", comment: "")

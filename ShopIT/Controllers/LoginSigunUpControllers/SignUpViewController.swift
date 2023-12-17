@@ -1,14 +1,14 @@
 //
-//  LoginViewController.swift
+//  SignUpViewController.swift
 //  ShopIT
 //
-//  Created by Taha Turan on 15.12.2023.
+//  Created by Taha Turan on 17.12.2023.
 //
 
 import UIKit
 import SnapKit
 
-class LoginViewController: UIViewController {
+class SignUpViewController: UIViewController {
     // MARK: - Properties
 
     private let logoImage: UIImageView = {
@@ -18,23 +18,25 @@ class LoginViewController: UIViewController {
         return imageView
     }()
 
-    private let titleLabel: CustomLabel = CustomLabel(labelType: .title, text: AppTextConstants.LoginViewController.loginText)
+    private let titleLabel: CustomLabel = CustomLabel(labelType: .title, text: AppTextConstants.LoginViewController.signUpText)
     private let emailTextField: CustomTextField = CustomTextField(type: .email)
     private let passwordTextField: CustomTextField = CustomTextField(type: .password)
-    private let forgotPasswordLabel: UILabel = {
+    private let nameTextField: CustomTextField = CustomTextField(type: .name)
+    private let checkBoxButton: CustomCheckButton = CustomCheckButton()
+    private lazy var forgotPasswordLabel: UILabel = {
         let label = UILabel()
-        label.text = AppTextConstants.LoginViewController.forgotPassword
-        label.textColor = .darkGray
+        label.attributedText = configureLabelText(boldText: AppTextConstants.LoginViewController.termsContionsText , normalText: AppTextConstants.LoginViewController.acceptAllText , reverse: false)
+        
         return label
     }()
 
-    private let loginButton: PrimaryButton = PrimaryButton(title: AppTextConstants.LoginViewController.loginText)
+    private let signUpButton: PrimaryButton = PrimaryButton(title: AppTextConstants.LoginViewController.signUpText)
     private lazy var orView: UIView = createOrLabelView()
     private let googleButton: CircularIconButton = CircularIconButton(icon: .facebook)
     private let facebookButton: CircularIconButton = CircularIconButton(icon: .google)
     private lazy var signUPlabel: UILabel = {
         let label = UILabel()
-        label.attributedText = self.configureLabelText(boldText: AppTextConstants.LoginViewController.signUpText, normalText: AppTextConstants.LoginViewController.haveAccountText, reverse: false)
+        label.attributedText = self.configureLabelText(boldText: AppTextConstants.LoginViewController.loginText, normalText: AppTextConstants.LoginViewController.alreadyHaveAccountText, reverse: false)
         return label
     }()
 
@@ -62,15 +64,17 @@ class LoginViewController: UIViewController {
 
 // MARK: - Helper
 
-extension LoginViewController {
+extension SignUpViewController {
     private func setupUI() {
         view.backgroundColor = .white
         view.addSubview(logoImage)
         view.addSubview(titleLabel)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
+        view.addSubview(nameTextField)
+        view.addSubview(checkBoxButton)
         view.addSubview(forgotPasswordLabel)
-        view.addSubview(loginButton)
+        view.addSubview(signUpButton)
         view.addSubview(orView)
         view.addSubview(googleButton)
         view.addSubview(facebookButton)
@@ -87,8 +91,14 @@ extension LoginViewController {
             make.top.equalTo(logoImage.snp.bottom)
             make.centerX.equalTo(view.snp.centerX)
         }
-        emailTextField.snp.makeConstraints { make in
+        nameTextField.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.left.right.equalToSuperview().inset(20)
+            make.height.equalTo(Theme.Size.defaultTextFieldHeight)
+        }
+        
+        emailTextField.snp.makeConstraints { make in
+            make.top.equalTo(nameTextField.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(Theme.Size.defaultTextFieldHeight)
         }
@@ -96,22 +106,26 @@ extension LoginViewController {
             make.top.equalTo(emailTextField.snp.bottom).offset(20)
             make.left.right.height.equalTo(emailTextField)
         }
-        forgotPasswordLabel.snp.makeConstraints { make in
-            make.top.equalTo(passwordTextField.snp.bottom).offset(10)
-            make.right.equalTo(view.snp.right).offset(-20)
+        checkBoxButton.snp.makeConstraints { make in
+            make.top.equalTo(passwordTextField.snp.bottom).offset(15)
+            make.left.equalTo(view.snp.left).offset(20)
         }
-        loginButton.snp.makeConstraints { make in
+        forgotPasswordLabel.snp.makeConstraints { make in
+            make.top.equalTo(passwordTextField.snp.bottom).offset(15)
+            make.left.equalTo(checkBoxButton.snp.right).offset(5)
+        }
+        signUpButton.snp.makeConstraints { make in
             make.top.equalTo(forgotPasswordLabel.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(80)
             make.height.equalTo(Theme.Size.primaryButtonHeight)
         }
         orView.snp.makeConstraints { make in
-            make.top.equalTo(loginButton.snp.bottom).offset(50)
+            make.top.equalTo(signUpButton.snp.bottom).offset(20)
             make.left.right.equalToSuperview()
         }
 
         googleButton.snp.makeConstraints { make in
-            make.top.equalTo(orView.snp.bottom).offset(30)
+            make.top.equalTo(orView.snp.bottom).offset(20)
             make.left.equalTo(view.snp.left).offset(110)
             make.height.width.equalTo(Theme.Size.socialButonSize.width)
         }
@@ -121,7 +135,7 @@ extension LoginViewController {
             make.left.equalTo(googleButton.snp.right).offset(40)
         }
         signUPlabel.snp.makeConstraints { make in
-            make.top.equalTo(facebookButton.snp.bottom).offset(50)
+            make.top.equalTo(facebookButton.snp.bottom).offset(30)
             make.centerX.equalTo(view.snp.centerX)
         }
     }
@@ -129,7 +143,7 @@ extension LoginViewController {
 
 // MARK: - Factory Methods
 
-extension LoginViewController {
+extension SignUpViewController {
     private func createOrLabelView() -> UIView {
         let containerView: UIView = UIView()
 
@@ -172,8 +186,8 @@ extension LoginViewController {
 
 // MARK: - Selector
 
-extension LoginViewController {
+extension SignUpViewController {
     @objc private func signUpTapped() {
-        navigationController?.pushViewController(SignUpViewController(), animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
 }
