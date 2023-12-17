@@ -25,6 +25,7 @@
 		5FE2FCA72B2C11F3004BB731 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCA62B2C11F3004BB731 /* CustomTextField.swift */; };
 		5FE2FCA92B2E9F76004BB731 /* CircularIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCA82B2E9F76004BB731 /* CircularIconButton.swift */; };
 		5FE2FCAB2B2EAEF7004BB731 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCAA2B2EAEF7004BB731 /* Extensions.swift */; };
+		5FE2FCAE2B2EB2C5004BB731 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5FE2FCAD2B2EB2C5004BB731 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F60FF642B2AAC8800E92218 /* SnapKit in Frameworks */,
+				5FE2FCAE2B2EB2C5004BB731 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +245,7 @@
 			name = ShopIT;
 			packageProductDependencies = (
 				5F60FF632B2AAC8800E92218 /* SnapKit */,
+				5FE2FCAD2B2EB2C5004BB731 /* IQKeyboardManagerSwift */,
 			);
 			productName = ShopIT;
 			productReference = 5F60FF262B2AA90400E92218 /* ShopIT.app */;
@@ -318,6 +321,7 @@
 			mainGroup = 5F60FF1D2B2AA90400E92218;
 			packageReferences = (
 				5F60FF622B2AAC8800E92218 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				5FE2FCAC2B2EB2C5004BB731 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 5F60FF272B2AA90400E92218 /* Products */;
 			projectDirPath = "";
@@ -719,6 +723,14 @@
 				minimumVersion = 5.6.0;
 			};
 		};
+		5FE2FCAC2B2EB2C5004BB731 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.16;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -726,6 +738,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5F60FF622B2AAC8800E92218 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		5FE2FCAD2B2EB2C5004BB731 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FE2FCAC2B2EB2C5004BB731 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
