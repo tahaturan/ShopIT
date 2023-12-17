@@ -21,6 +21,8 @@ struct AppTextConstants {
     
     struct LoginViewController {
         static let title = NSLocalizedString("Log in", comment: "")
+        static let forgotPassword = NSLocalizedString("Forgot password?", comment: "")
+        static let loginText = NSLocalizedString("Log in", comment: "")
     }
     struct CustomTextField {
         static let email = NSLocalizedString("E-mail", comment: "")

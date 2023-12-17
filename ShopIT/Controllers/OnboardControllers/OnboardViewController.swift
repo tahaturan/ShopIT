@@ -27,6 +27,7 @@ class OnboardViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.isLastPage = isLastPage
          onboardImage = UIImageView(image: image)
+        onboardImage.contentMode = .scaleAspectFit
          titleLabel = CustomLabel(labelType: .title, text: title)
          subTitleLabel = CustomLabel(labelType: .subTitle, text: subTitle)
          

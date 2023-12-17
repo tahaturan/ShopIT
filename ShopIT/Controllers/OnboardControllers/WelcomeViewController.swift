@@ -132,22 +132,7 @@ extension WelcomeViewController: OnboardViewControllerDelegate {
 
 //MARK: - Helper
 extension WelcomeViewController {
-    private func configureLabelText(boldText: String, normalText: String) -> NSMutableAttributedString {
-        
-        let boldAttributes: [NSAttributedString.Key: Any] = [.font: Theme.Font.titleFont, .foregroundColor: UIColor.black]
-        let normalAttributes: [NSAttributedString.Key: Any] = [.font: Theme.Font.subTitleFont, .foregroundColor: UIColor.darkGray]
-        
-        let attributedString = NSMutableAttributedString(string: "")
-        
-         let boldAttributedString = NSAttributedString(string: boldText, attributes: boldAttributes)
-        attributedString.append(boldAttributedString)
-        
-        let normalAttributedString = NSAttributedString(string: normalText, attributes: normalAttributes)
-        attributedString.append(normalAttributedString)
-        
-        return attributedString
-    }
-    
+
     @objc private func skipButtonTapped(_ sender: UIButton) {
         UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
         let loginVC = LoginViewController()

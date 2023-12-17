@@ -14,6 +14,7 @@ enum Theme {
         static let titleFont = UIFont.systemFont(ofSize: 24, weight: .bold)
         static let subTitleFont = UIFont.systemFont(ofSize: 18, weight: .medium)
         static let primaryButtonFont = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        static let normalBoldFont = UIFont.systemFont(ofSize: 18, weight: .semibold)
     }
     
     enum Size {
@@ -21,6 +22,8 @@ enum Theme {
         static let primaryButtonHeight: CGFloat = 60
         static let defaultTextfieldCornerRadius: CGFloat = 10
         static let defaultTextFieldHeight: CGFloat = 50
+        static let socialButonSize: CGSize = CGSize(width: 70, height: 70)
+        static let socialIconSize: CGSize = CGSize(width: 30, height: 30)
     }
     
     enum IconName {

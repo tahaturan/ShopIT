@@ -23,6 +23,8 @@
 		5F60FF6F2B2B5CB000E92218 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60FF6E2B2B5CB000E92218 /* PrimaryButton.swift */; };
 		5FE2FCA52B2BEDDE004BB731 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCA42B2BEDDE004BB731 /* LoginViewController.swift */; };
 		5FE2FCA72B2C11F3004BB731 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCA62B2C11F3004BB731 /* CustomTextField.swift */; };
+		5FE2FCA92B2E9F76004BB731 /* CircularIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCA82B2E9F76004BB731 /* CircularIconButton.swift */; };
+		5FE2FCAB2B2EAEF7004BB731 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCAA2B2EAEF7004BB731 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		5F60FF6E2B2B5CB000E92218 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		5FE2FCA42B2BEDDE004BB731 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5FE2FCA62B2C11F3004BB731 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		5FE2FCA82B2E9F76004BB731 /* CircularIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularIconButton.swift; sourceTree = "<group>"; };
+		5FE2FCAA2B2EAEF7004BB731 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 			children = (
 				5F60FF662B2AC98800E92218 /* Theme.swift */,
 				5F60FF682B2ACB8400E92218 /* AppTextConstants.swift */,
+				5FE2FCAA2B2EAEF7004BB731 /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 				5F60FF6A2B2ACCE200E92218 /* CustomLabel.swift */,
 				5F60FF6E2B2B5CB000E92218 /* PrimaryButton.swift */,
 				5FE2FCA62B2C11F3004BB731 /* CustomTextField.swift */,
+				5FE2FCA82B2E9F76004BB731 /* CircularIconButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,12 +361,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE2FCA92B2E9F76004BB731 /* CircularIconButton.swift in Sources */,
 				5FE2FCA52B2BEDDE004BB731 /* LoginViewController.swift in Sources */,
 				5F60FF2A2B2AA90400E92218 /* AppDelegate.swift in Sources */,
 				5F60FF672B2AC98800E92218 /* Theme.swift in Sources */,
 				5F60FF2C2B2AA90400E92218 /* SceneDelegate.swift in Sources */,
 				5FE2FCA72B2C11F3004BB731 /* CustomTextField.swift in Sources */,
 				5F60FF6B2B2ACCE200E92218 /* CustomLabel.swift in Sources */,
+				5FE2FCAB2B2EAEF7004BB731 /* Extensions.swift in Sources */,
 				5F60FF692B2ACB8400E92218 /* AppTextConstants.swift in Sources */,
 				5F60FF612B2AABD600E92218 /* OnboardViewController.swift in Sources */,
 				5F60FF6F2B2B5CB000E92218 /* PrimaryButton.swift in Sources */,
