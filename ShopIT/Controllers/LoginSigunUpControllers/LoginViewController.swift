@@ -47,6 +47,8 @@ class LoginViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(signUpTapped))
         signUPlabel.isUserInteractionEnabled = true
         signUPlabel.addGestureRecognizer(tapGesture)
+        
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -175,5 +177,14 @@ extension LoginViewController {
 extension LoginViewController {
     @objc private func signUpTapped() {
         navigationController?.pushViewController(SignUpViewController(), animated: true)
+    }
+    
+    @objc private func loginButtonTapped() {
+        let mainTabbarController: UITabBarController = MainTabbarController()
+        
+        if let windowsScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let scneDelegate = windowsScene.delegate as? SceneDelegate {
+            scneDelegate.window?.rootViewController = mainTabbarController
+        }
     }
 }

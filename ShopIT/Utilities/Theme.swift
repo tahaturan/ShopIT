@@ -24,6 +24,7 @@ enum Theme {
         static let defaultTextFieldHeight: CGFloat = 50
         static let socialButonSize: CGSize = CGSize(width: 70, height: 70)
         static let socialIconSize: CGSize = CGSize(width: 30, height: 30)
+        static let tabbarIconSize: CGSize = CGSize(width: 24, height: 24)
     }
     
     enum IconName {
