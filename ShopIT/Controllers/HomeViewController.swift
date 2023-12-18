@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
         searchBar.backgroundColor = .white
         return searchBar
     }()
+    private let dressButton: CategoryListButtons = CategoryListButtons()
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,7 @@ extension HomeViewController {
         view.addSubview(searchBarContainer)
         searchBarContainer.addSubview(searchBar)
         searchBarContainer.addSubview(searchFilterButton)
+        view.addSubview(dressButton)
     }
     
     private func setupLayout() {
@@ -80,6 +82,11 @@ extension HomeViewController {
         searchBar.snp.makeConstraints { make in
             make.left.top.bottom.equalToSuperview().inset(10)
             make.right.equalTo(searchFilterButton.snp.left)
+        }
+        dressButton.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(60)
+            make.left.right.equalTo(searchBarContainer)
+            make.height.equalTo(90)
         }
     }
 }

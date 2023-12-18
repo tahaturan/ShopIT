@@ -33,6 +33,8 @@
 		5FE2FCB82B2FAC01004BB731 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCB72B2FAC01004BB731 /* BasketViewController.swift */; };
 		5FE2FCBA2B2FAC12004BB731 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCB92B2FAC12004BB731 /* ProfileViewController.swift */; };
 		5FE2FCBC2B2FACAC004BB731 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCBB2B2FACAC004BB731 /* FavoriteViewController.swift */; };
+		5FE2FCBE2B30EB25004BB731 /* CustomCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCBD2B30EB25004BB731 /* CustomCategoryButton.swift */; };
+		5FE2FCC02B30F0A0004BB731 /* CategoryListButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCBF2B30F0A0004BB731 /* CategoryListButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		5FE2FCB72B2FAC01004BB731 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		5FE2FCB92B2FAC12004BB731 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5FE2FCBB2B2FACAC004BB731 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		5FE2FCBD2B30EB25004BB731 /* CustomCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryButton.swift; sourceTree = "<group>"; };
+		5FE2FCBF2B30F0A0004BB731 /* CategoryListButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +223,8 @@
 				5FE2FCA62B2C11F3004BB731 /* CustomTextField.swift */,
 				5FE2FCA82B2E9F76004BB731 /* CircularIconButton.swift */,
 				5FE2FCB12B2ED121004BB731 /* CustomCheckButton.swift */,
+				5FE2FCBD2B30EB25004BB731 /* CustomCategoryButton.swift */,
+				5FE2FCBF2B30F0A0004BB731 /* CategoryListButtons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 			files = (
 				5FE2FCB82B2FAC01004BB731 /* BasketViewController.swift in Sources */,
 				5FE2FCA92B2E9F76004BB731 /* CircularIconButton.swift in Sources */,
+				5FE2FCBE2B30EB25004BB731 /* CustomCategoryButton.swift in Sources */,
 				5FE2FCA52B2BEDDE004BB731 /* LoginViewController.swift in Sources */,
 				5FE2FCB42B2FABBA004BB731 /* MainTabbarController.swift in Sources */,
 				5F60FF2A2B2AA90400E92218 /* AppDelegate.swift in Sources */,
@@ -399,6 +406,7 @@
 				5FE2FCB22B2ED121004BB731 /* CustomCheckButton.swift in Sources */,
 				5FE2FCAB2B2EAEF7004BB731 /* Extensions.swift in Sources */,
 				5F60FF692B2ACB8400E92218 /* AppTextConstants.swift in Sources */,
+				5FE2FCC02B30F0A0004BB731 /* CategoryListButtons.swift in Sources */,
 				5FE2FCB62B2FABE7004BB731 /* HomeViewController.swift in Sources */,
 				5FE2FCBC2B2FACAC004BB731 /* FavoriteViewController.swift in Sources */,
 				5F60FF612B2AABD600E92218 /* OnboardViewController.swift in Sources */,
