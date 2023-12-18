@@ -24,13 +24,18 @@ class MainTabbarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     private func setupTabbar() {
-        homeViewController.tabBarItem = UITabBarItem(title: "", image: .homeIcon.resize(to: Theme.Size.tabbarIconSize), selectedImage: .homeIcon.resize(to: Theme.Size.tabbarIconSize).withRenderingMode(.alwaysOriginal))
-      
-        basketViewContorller.tabBarItem = UITabBarItem(title: "", image: .shoppingCartIcon.resize(to: Theme.Size.tabbarIconSize), selectedImage: .shoppingCartIcon.resize(to: Theme.Size.tabbarIconSize).withRenderingMode(.alwaysOriginal))
-        favoriteViewController.tabBarItem = UITabBarItem(title: "", image: .heartIcon.resize(to: Theme.Size.tabbarIconSize), selectedImage: .heartIcon.resize(to: Theme.Size.tabbarIconSize).withRenderingMode(.alwaysOriginal))
-        profileViewController.tabBarItem = UITabBarItem(title: "", image: .userIcon.resize(to: Theme.Size.tabbarIconSize), selectedImage: .userIcon.resize(to: Theme.Size.tabbarIconSize).withRenderingMode(.alwaysOriginal))
+        let homeNavController = UINavigationController(rootViewController: homeViewController)
+               let basketNavController = UINavigationController(rootViewController: basketViewContorller)
+               let favoriteNavController = UINavigationController(rootViewController: favoriteViewController)
+               let profileNavController = UINavigationController(rootViewController: profileViewController)
         
-        viewControllers = [homeViewController, basketViewContorller, favoriteViewController, profileViewController]
+        homeNavController.tabBarItem = UITabBarItem(title: "", image: .homeIcon.resize(to: Theme.Size.tabbarIconSize), selectedImage: .homeIcon.resize(to: Theme.Size.tabbarIconSize).withRenderingMode(.alwaysOriginal))
+      
+        basketNavController.tabBarItem = UITabBarItem(title: "", image: .shoppingCartIcon.resize(to: Theme.Size.tabbarIconSize), selectedImage: .shoppingCartIcon.resize(to: Theme.Size.tabbarIconSize).withRenderingMode(.alwaysOriginal))
+        favoriteNavController.tabBarItem = UITabBarItem(title: "", image: .heartIcon.resize(to: Theme.Size.tabbarIconSize), selectedImage: .heartIcon.resize(to: Theme.Size.tabbarIconSize).withRenderingMode(.alwaysOriginal))
+        profileNavController.tabBarItem = UITabBarItem(title: "", image: .userIcon.resize(to: Theme.Size.tabbarIconSize), selectedImage: .userIcon.resize(to: Theme.Size.tabbarIconSize).withRenderingMode(.alwaysOriginal))
+        
+        viewControllers = [homeNavController, basketNavController, favoriteNavController, profileNavController]
        
         tabBar.backgroundColor = .white
         

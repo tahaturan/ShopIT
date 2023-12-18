@@ -35,4 +35,10 @@ struct AppTextConstants {
         static let name = NSLocalizedString("Name", comment: "")
         static let password = NSLocalizedString("Password", comment: "")
     }
+    struct HomeViewController {
+        static let navBarTitle = NSLocalizedString("Aydin/Soke", comment: "")
+        static let search = NSLocalizedString("Search", comment: "")
+        static let title = NSLocalizedString("Explore", comment: "")
+        static let subTitle = NSLocalizedString("best Outfits for you", comment: "")
+    }
 }
