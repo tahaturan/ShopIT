@@ -38,6 +38,8 @@
 		5FE2FCC22B310CBC004BB731 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCC12B310CBC004BB731 /* ProductModel.swift */; };
 		5FE2FCC52B310D05004BB731 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5FE2FCC42B310D05004BB731 /* Alamofire */; };
 		5FE2FCC72B310E77004BB731 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCC62B310E77004BB731 /* ProductService.swift */; };
+		5FE2FCC92B311587004BB731 /* SearchBarContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCC82B311587004BB731 /* SearchBarContainer.swift */; };
+		5FE2FCCC2B3117D9004BB731 /* HomeViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCCB2B3117D9004BB731 /* HomeViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		5FE2FCBF2B30F0A0004BB731 /* CategoryListButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListButtons.swift; sourceTree = "<group>"; };
 		5FE2FCC12B310CBC004BB731 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		5FE2FCC62B310E77004BB731 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		5FE2FCC82B311587004BB731 /* SearchBarContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarContainer.swift; sourceTree = "<group>"; };
+		5FE2FCCB2B3117D9004BB731 /* HomeViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +218,7 @@
 				5FE2FCA32B2BED72004BB731 /* LoginSigunUpControllers */,
 				5F60FF652B2ABE8B00E92218 /* OnboardControllers */,
 				5FE2FCB32B2FABBA004BB731 /* MainTabbarController.swift */,
-				5FE2FCB52B2FABE7004BB731 /* HomeViewController.swift */,
+				5FE2FCCA2B3117BA004BB731 /* HomeViewControllers */,
 				5FE2FCB72B2FAC01004BB731 /* BasketViewController.swift */,
 				5FE2FCB92B2FAC12004BB731 /* ProfileViewController.swift */,
 				5FE2FCBB2B2FACAC004BB731 /* FavoriteViewController.swift */,
@@ -232,6 +236,7 @@
 				5FE2FCB12B2ED121004BB731 /* CustomCheckButton.swift */,
 				5FE2FCBD2B30EB25004BB731 /* CustomCategoryButton.swift */,
 				5FE2FCBF2B30F0A0004BB731 /* CategoryListButtons.swift */,
+				5FE2FCC82B311587004BB731 /* SearchBarContainer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +265,15 @@
 				5FE2FCAF2B2ECE54004BB731 /* SignUpViewController.swift */,
 			);
 			path = LoginSigunUpControllers;
+			sourceTree = "<group>";
+		};
+		5FE2FCCA2B3117BA004BB731 /* HomeViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FE2FCB52B2FABE7004BB731 /* HomeViewController.swift */,
+				5FE2FCCB2B3117D9004BB731 /* HomeViewLayout.swift */,
+			);
+			path = HomeViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +421,7 @@
 				5FE2FCBE2B30EB25004BB731 /* CustomCategoryButton.swift in Sources */,
 				5FE2FCA52B2BEDDE004BB731 /* LoginViewController.swift in Sources */,
 				5FE2FCB42B2FABBA004BB731 /* MainTabbarController.swift in Sources */,
+				5FE2FCCC2B3117D9004BB731 /* HomeViewLayout.swift in Sources */,
 				5F60FF2A2B2AA90400E92218 /* AppDelegate.swift in Sources */,
 				5F60FF672B2AC98800E92218 /* Theme.swift in Sources */,
 				5FE2FCC22B310CBC004BB731 /* ProductModel.swift in Sources */,
@@ -419,6 +434,7 @@
 				5FE2FCAB2B2EAEF7004BB731 /* Extensions.swift in Sources */,
 				5F60FF692B2ACB8400E92218 /* AppTextConstants.swift in Sources */,
 				5FE2FCC02B30F0A0004BB731 /* CategoryListButtons.swift in Sources */,
+				5FE2FCC92B311587004BB731 /* SearchBarContainer.swift in Sources */,
 				5FE2FCB62B2FABE7004BB731 /* HomeViewController.swift in Sources */,
 				5FE2FCBC2B2FACAC004BB731 /* FavoriteViewController.swift in Sources */,
 				5F60FF612B2AABD600E92218 /* OnboardViewController.swift in Sources */,
