@@ -40,6 +40,10 @@
 		5FE2FCC72B310E77004BB731 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCC62B310E77004BB731 /* ProductService.swift */; };
 		5FE2FCC92B311587004BB731 /* SearchBarContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCC82B311587004BB731 /* SearchBarContainer.swift */; };
 		5FE2FCCC2B3117D9004BB731 /* HomeViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCCB2B3117D9004BB731 /* HomeViewLayout.swift */; };
+		5FE2FCCF2B3150F1004BB731 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCCE2B3150F1004BB731 /* APIEndpoint.swift */; };
+		5FE2FCD12B315221004BB731 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD02B315221004BB731 /* NetworkRequest.swift */; };
+		5FE2FCD32B3152A3004BB731 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD22B3152A3004BB731 /* NetworkService.swift */; };
+		5FE2FCD52B31549A004BB731 /* ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD42B31549A004BB731 /* ProductRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +98,10 @@
 		5FE2FCC62B310E77004BB731 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		5FE2FCC82B311587004BB731 /* SearchBarContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarContainer.swift; sourceTree = "<group>"; };
 		5FE2FCCB2B3117D9004BB731 /* HomeViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewLayout.swift; sourceTree = "<group>"; };
+		5FE2FCCE2B3150F1004BB731 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		5FE2FCD02B315221004BB731 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		5FE2FCD22B3152A3004BB731 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5FE2FCD42B31549A004BB731 /* ProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,7 @@
 				5F60FF5E2B2AAAE600E92218 /* Views */,
 				5F60FF5D2B2AAAD800E92218 /* Controllers */,
 				5F60FF5C2B2AAAC800E92218 /* Services */,
+				5FE2FCCD2B3150C0004BB731 /* Networking */,
 				5F60FF5B2B2AAABB00E92218 /* Utilities */,
 				5F60FF5A2B2AAAA700E92218 /* Resources */,
 				5F60FF592B2AAA7900E92218 /* SupportingFiles */,
@@ -274,6 +283,17 @@
 				5FE2FCCB2B3117D9004BB731 /* HomeViewLayout.swift */,
 			);
 			path = HomeViewControllers;
+			sourceTree = "<group>";
+		};
+		5FE2FCCD2B3150C0004BB731 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5FE2FCCE2B3150F1004BB731 /* APIEndpoint.swift */,
+				5FE2FCD02B315221004BB731 /* NetworkRequest.swift */,
+				5FE2FCD22B3152A3004BB731 /* NetworkService.swift */,
+				5FE2FCD42B31549A004BB731 /* ProductRequest.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +441,8 @@
 				5FE2FCBE2B30EB25004BB731 /* CustomCategoryButton.swift in Sources */,
 				5FE2FCA52B2BEDDE004BB731 /* LoginViewController.swift in Sources */,
 				5FE2FCB42B2FABBA004BB731 /* MainTabbarController.swift in Sources */,
+				5FE2FCCF2B3150F1004BB731 /* APIEndpoint.swift in Sources */,
+				5FE2FCD32B3152A3004BB731 /* NetworkService.swift in Sources */,
 				5FE2FCCC2B3117D9004BB731 /* HomeViewLayout.swift in Sources */,
 				5F60FF2A2B2AA90400E92218 /* AppDelegate.swift in Sources */,
 				5F60FF672B2AC98800E92218 /* Theme.swift in Sources */,
@@ -434,12 +456,14 @@
 				5FE2FCAB2B2EAEF7004BB731 /* Extensions.swift in Sources */,
 				5F60FF692B2ACB8400E92218 /* AppTextConstants.swift in Sources */,
 				5FE2FCC02B30F0A0004BB731 /* CategoryListButtons.swift in Sources */,
+				5FE2FCD52B31549A004BB731 /* ProductRequest.swift in Sources */,
 				5FE2FCC92B311587004BB731 /* SearchBarContainer.swift in Sources */,
 				5FE2FCB62B2FABE7004BB731 /* HomeViewController.swift in Sources */,
 				5FE2FCBC2B2FACAC004BB731 /* FavoriteViewController.swift in Sources */,
 				5F60FF612B2AABD600E92218 /* OnboardViewController.swift in Sources */,
 				5F60FF6F2B2B5CB000E92218 /* PrimaryButton.swift in Sources */,
 				5FE2FCB02B2ECE54004BB731 /* SignUpViewController.swift in Sources */,
+				5FE2FCD12B315221004BB731 /* NetworkRequest.swift in Sources */,
 				5F60FF6D2B2AD7DA00E92218 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

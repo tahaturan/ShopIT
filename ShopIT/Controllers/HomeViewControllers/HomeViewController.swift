@@ -19,7 +19,8 @@ final class HomeViewController: UIViewController {
     let categoryButton: CategoryListButtons = CategoryListButtons()
     let newArrivalTitleLabel: CustomLabel = CustomLabel(labelType: .title, text: "New Arrival")
     let seeAllLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: "See All")
-
+    
+    var products: [ProductElement] = []
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -50,24 +51,30 @@ extension HomeViewController {
 
 extension HomeViewController {
     private func fetchProduct() {
-        ProductService.shared.fetchProducts { result in
+        let request = ProductRequest(category: .electronics)
+        request.perform {[weak self] result in
             DispatchQueue.main.async {
                 switch result {
-                case let .success(products):
-                    self.displayProducts(products)
-                    print(products[0].title)
-                case let .failure(error):
-                    print(error.localizedDescription)
+                case .success(let fetchedProducts):
+                    self?.products = fetchedProducts
+                    self?.updateUI()
+                case .failure(let error):
+                    self?.displayError(error)
                 }
             }
         }
     }
-
-    private func displayProducts(_ products: Product) {
+    private func updateUI() {
+        
     }
+    
+    private func displayError(_ error: Error) {
+        
+    }
+  
 }
 
-// MARK: - Factory
+// MARK: - Factory Methods
 
 extension HomeViewController {
     private func createNavButton(image: UIImage) -> UIButton {
