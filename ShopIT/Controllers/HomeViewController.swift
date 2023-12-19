@@ -38,13 +38,16 @@ class HomeViewController: UIViewController {
         searchBar.backgroundColor = .white
         return searchBar
     }()
-    private let dressButton: CategoryListButtons = CategoryListButtons()
+    private let categoryButton: CategoryListButtons = CategoryListButtons()
+    private let newArrivalTitleLabel: CustomLabel = CustomLabel(labelType: .title, text: "New Arrival")
+    private let seeAllLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: "See All")
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupLayout()
         setupNavigationBar()
+        fetchProduct()
     }
 }
 
@@ -57,7 +60,9 @@ extension HomeViewController {
         view.addSubview(searchBarContainer)
         searchBarContainer.addSubview(searchBar)
         searchBarContainer.addSubview(searchFilterButton)
-        view.addSubview(dressButton)
+        view.addSubview(categoryButton)
+        view.addSubview(newArrivalTitleLabel)
+        view.addSubview(seeAllLabel)
     }
     
     private func setupLayout() {
@@ -83,10 +88,18 @@ extension HomeViewController {
             make.left.top.bottom.equalToSuperview().inset(10)
             make.right.equalTo(searchFilterButton.snp.left)
         }
-        dressButton.snp.makeConstraints { make in
+        categoryButton.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).offset(60)
             make.left.right.equalTo(searchBarContainer)
             make.height.equalTo(90)
+        }
+        newArrivalTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(categoryButton.snp.bottom).offset(60)
+            make.left.equalTo(categoryButton)
+        }
+        seeAllLabel.snp.makeConstraints { make in
+            make.top.equalTo(newArrivalTitleLabel)
+            make.right.equalTo(categoryButton)
         }
     }
 }
@@ -98,6 +111,24 @@ extension HomeViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: notificationButton)
         navigationItem.title = AppTextConstants.HomeViewController.navBarTitle
+    }
+    
+    private func fetchProduct() {
+        ProductService.shared.fetchProducts { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let products):
+                    self.displayProducts(products)
+                    print(products[0].title)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    private func displayProducts(_ products: Product) {
+        
     }
 }
 

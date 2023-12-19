@@ -35,6 +35,9 @@
 		5FE2FCBC2B2FACAC004BB731 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCBB2B2FACAC004BB731 /* FavoriteViewController.swift */; };
 		5FE2FCBE2B30EB25004BB731 /* CustomCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCBD2B30EB25004BB731 /* CustomCategoryButton.swift */; };
 		5FE2FCC02B30F0A0004BB731 /* CategoryListButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCBF2B30F0A0004BB731 /* CategoryListButtons.swift */; };
+		5FE2FCC22B310CBC004BB731 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCC12B310CBC004BB731 /* ProductModel.swift */; };
+		5FE2FCC52B310D05004BB731 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5FE2FCC42B310D05004BB731 /* Alamofire */; };
+		5FE2FCC72B310E77004BB731 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCC62B310E77004BB731 /* ProductService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,8 @@
 		5FE2FCBB2B2FACAC004BB731 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		5FE2FCBD2B30EB25004BB731 /* CustomCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryButton.swift; sourceTree = "<group>"; };
 		5FE2FCBF2B30F0A0004BB731 /* CategoryListButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListButtons.swift; sourceTree = "<group>"; };
+		5FE2FCC12B310CBC004BB731 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		5FE2FCC62B310E77004BB731 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE2FCC52B310D05004BB731 /* Alamofire in Frameworks */,
 				5F60FF642B2AAC8800E92218 /* SnapKit in Frameworks */,
 				5FE2FCAE2B2EB2C5004BB731 /* IQKeyboardManagerSwift in Frameworks */,
 			);
@@ -140,7 +146,7 @@
 				5F60FF5F2B2AAAEB00E92218 /* Models */,
 				5F60FF5E2B2AAAE600E92218 /* Views */,
 				5F60FF5D2B2AAAD800E92218 /* Controllers */,
-				5F60FF5C2B2AAAC800E92218 /* Networking */,
+				5F60FF5C2B2AAAC800E92218 /* Services */,
 				5F60FF5B2B2AAABB00E92218 /* Utilities */,
 				5F60FF5A2B2AAAA700E92218 /* Resources */,
 				5F60FF592B2AAA7900E92218 /* SupportingFiles */,
@@ -194,11 +200,12 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		5F60FF5C2B2AAAC800E92218 /* Networking */ = {
+		5F60FF5C2B2AAAC800E92218 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5FE2FCC62B310E77004BB731 /* ProductService.swift */,
 			);
-			path = Networking;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5F60FF5D2B2AAAD800E92218 /* Controllers */ = {
@@ -232,6 +239,7 @@
 		5F60FF5F2B2AAAEB00E92218 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5FE2FCC12B310CBC004BB731 /* ProductModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 			packageProductDependencies = (
 				5F60FF632B2AAC8800E92218 /* SnapKit */,
 				5FE2FCAD2B2EB2C5004BB731 /* IQKeyboardManagerSwift */,
+				5FE2FCC42B310D05004BB731 /* Alamofire */,
 			);
 			productName = ShopIT;
 			productReference = 5F60FF262B2AA90400E92218 /* ShopIT.app */;
@@ -349,6 +358,7 @@
 			packageReferences = (
 				5F60FF622B2AAC8800E92218 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5FE2FCAC2B2EB2C5004BB731 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				5FE2FCC32B310D05004BB731 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 5F60FF272B2AA90400E92218 /* Products */;
 			projectDirPath = "";
@@ -399,8 +409,10 @@
 				5FE2FCB42B2FABBA004BB731 /* MainTabbarController.swift in Sources */,
 				5F60FF2A2B2AA90400E92218 /* AppDelegate.swift in Sources */,
 				5F60FF672B2AC98800E92218 /* Theme.swift in Sources */,
+				5FE2FCC22B310CBC004BB731 /* ProductModel.swift in Sources */,
 				5FE2FCBA2B2FAC12004BB731 /* ProfileViewController.swift in Sources */,
 				5F60FF2C2B2AA90400E92218 /* SceneDelegate.swift in Sources */,
+				5FE2FCC72B310E77004BB731 /* ProductService.swift in Sources */,
 				5FE2FCA72B2C11F3004BB731 /* CustomTextField.swift in Sources */,
 				5F60FF6B2B2ACCE200E92218 /* CustomLabel.swift in Sources */,
 				5FE2FCB22B2ED121004BB731 /* CustomCheckButton.swift in Sources */,
@@ -767,6 +779,14 @@
 				minimumVersion = 6.5.16;
 			};
 		};
+		5FE2FCC32B310D05004BB731 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -779,6 +799,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5FE2FCAC2B2EB2C5004BB731 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		5FE2FCC42B310D05004BB731 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FE2FCC32B310D05004BB731 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
