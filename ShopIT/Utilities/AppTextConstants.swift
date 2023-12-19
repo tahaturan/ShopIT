@@ -41,4 +41,7 @@ struct AppTextConstants {
         static let title = NSLocalizedString("Explore", comment: "")
         static let subTitle = NSLocalizedString("best Outfits for you", comment: "")
     }
+    struct CellIDs {
+        static let homeCollectionViewID: String = "HomeCollectionID"
+    }
 }

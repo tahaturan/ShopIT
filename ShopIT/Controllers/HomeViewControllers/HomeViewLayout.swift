@@ -38,6 +38,11 @@ struct HomeViewLayout {
             make.top.equalTo(viewController.newArrivalTitleLabel)
             make.right.equalTo(viewController.categoryButton)
         }
+        viewController.collectionView.snp.makeConstraints { make in
+            make.top.equalTo(viewController.newArrivalTitleLabel.snp.bottom).offset(20)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(250)
+        }
     }
     static func setupNavigationBar(for viewController: HomeViewController) {
          viewController.navigationController?.isNavigationBarHidden = false

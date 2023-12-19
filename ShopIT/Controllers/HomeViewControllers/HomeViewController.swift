@@ -21,12 +21,16 @@ final class HomeViewController: UIViewController {
     let seeAllLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: "See All")
     
     var products: [ProductElement] = []
+    
+    var collectionView: UICollectionView!
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionView()
         setupUI()
         fetchProduct()
+        
     }
 }
 
@@ -41,7 +45,7 @@ extension HomeViewController {
         view.addSubview(categoryButton)
         view.addSubview(newArrivalTitleLabel)
         view.addSubview(seeAllLabel)
-
+        view.addSubview(collectionView)
         HomeViewLayout.setupLayout(for: self)
         HomeViewLayout.setupNavigationBar(for: self)
     }
@@ -51,7 +55,7 @@ extension HomeViewController {
 
 extension HomeViewController {
     private func fetchProduct() {
-        let request = ProductRequest(category: .electronics)
+        let request = ProductRequest(category: .jewelery)
         request.perform {[weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -65,13 +69,20 @@ extension HomeViewController {
         }
     }
     private func updateUI() {
-        
+        collectionView.reloadData()
     }
-    
     private func displayError(_ error: Error) {
         
     }
   
+    private func setupCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: AppTextConstants.CellIDs.homeCollectionViewID)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
 }
 
 // MARK: - Factory Methods
@@ -83,5 +94,24 @@ extension HomeViewController {
         button.imageView?.contentMode = .scaleAspectFit
         button.tintColor = .darkGray
         return button
+    }
+}
+
+//MARK: - UICollectionView Delegate/DataSource
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return products.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppTextConstants.CellIDs.homeCollectionViewID, for: indexPath) as! HomeCollectionViewCell
+        let product = products[indexPath.row]
+        cell.setupViews(product: product)
+        return cell
+    }
+}
+//MARK: - UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 200, height: 200)
     }
 }

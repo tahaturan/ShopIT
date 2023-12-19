@@ -44,6 +44,7 @@
 		5FE2FCD12B315221004BB731 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD02B315221004BB731 /* NetworkRequest.swift */; };
 		5FE2FCD32B3152A3004BB731 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD22B3152A3004BB731 /* NetworkService.swift */; };
 		5FE2FCD52B31549A004BB731 /* ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD42B31549A004BB731 /* ProductRequest.swift */; };
+		5FE2FCD72B3182A0004BB731 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD62B3182A0004BB731 /* HomeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		5FE2FCD02B315221004BB731 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		5FE2FCD22B3152A3004BB731 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5FE2FCD42B31549A004BB731 /* ProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequest.swift; sourceTree = "<group>"; };
+		5FE2FCD62B3182A0004BB731 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 				5FE2FCBD2B30EB25004BB731 /* CustomCategoryButton.swift */,
 				5FE2FCBF2B30F0A0004BB731 /* CategoryListButtons.swift */,
 				5FE2FCC82B311587004BB731 /* SearchBarContainer.swift */,
+				5FE2FCD62B3182A0004BB731 /* HomeCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				5FE2FCBE2B30EB25004BB731 /* CustomCategoryButton.swift in Sources */,
 				5FE2FCA52B2BEDDE004BB731 /* LoginViewController.swift in Sources */,
 				5FE2FCB42B2FABBA004BB731 /* MainTabbarController.swift in Sources */,
+				5FE2FCD72B3182A0004BB731 /* HomeCollectionViewCell.swift in Sources */,
 				5FE2FCCF2B3150F1004BB731 /* APIEndpoint.swift in Sources */,
 				5FE2FCD32B3152A3004BB731 /* NetworkService.swift in Sources */,
 				5FE2FCCC2B3117D9004BB731 /* HomeViewLayout.swift in Sources */,
