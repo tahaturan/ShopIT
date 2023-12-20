@@ -8,7 +8,15 @@
 import Foundation
 import UIKit
 
+
+protocol SearchBarContainerDelegate: AnyObject {
+    func searchBarDidBeginEditing()
+}
+
 class SearchBarContainer: UIView {
+    
+    weak var delegate: SearchBarContainerDelegate?
+    
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = AppTextConstants.HomeViewController.search
@@ -28,6 +36,7 @@ class SearchBarContainer: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        searchBar.delegate = self
     }
 
     required init?(coder: NSCoder) {
@@ -55,5 +64,14 @@ class SearchBarContainer: UIView {
             make.left.top.bottom.equalToSuperview().inset(10)
             make.right.equalTo(searchFilterButton.snp.left)
         }
+    }
+}
+
+//MARK: -
+extension SearchBarContainer: UISearchBarDelegate {
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        delegate?.searchBarDidBeginEditing()
+        return false
     }
 }

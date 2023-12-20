@@ -1,17 +1,17 @@
 //
-//  HomeCollectionViewCell.swift
+//  SearchViewTableViewCell.swift
 //  ShopIT
 //
-//  Created by Taha Turan on 19.12.2023.
+//  Created by Taha Turan on 20.12.2023.
 //
 
-import SDWebImage
-import SnapKit
 import UIKit
 
-class HomeCollectionViewCell: UICollectionViewCell {
-    private let containerView: UIView = UIView()
-    private let productImageView: UIImageView = {
+class SearchViewTableViewCell: UITableViewCell {
+    // MARK: - Properties
+
+   private let containerView: UIView = UIView()
+   private let productImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -27,20 +27,22 @@ class HomeCollectionViewCell: UICollectionViewCell {
         let button = UIButton()
         button.setImage(UIImage(systemName: "heart"), for: .normal)
         button.backgroundColor = .white
-        button.tintColor = .black
         button.layer.cornerRadius = 20
         return button
     }()
 
-    private let priceLabel: UILabel = {
+   private let priceLabel: UILabel = {
         let priceLabel = UILabel()
         priceLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return priceLabel
     }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    // MARK: - LifeCycle
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureCell()
+        
     }
 
     required init?(coder: NSCoder) {
@@ -48,17 +50,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
 
     private func configureCell() {
-        backgroundColor = .white
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.1
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowRadius = 10
-        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
-        layer.shouldRasterize = true
-        layer.rasterizationScale = UIScreen.main.scale
-        layer.cornerRadius = 15
-        clipsToBounds = false
-
         containerView.addSubview(productImageView)
         containerView.addSubview(productTitleLabel)
         containerView.addSubview(priceLabel)
@@ -85,8 +76,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
             make.centerX.equalTo(containerView.snp.centerX)
         }
         favoriteButton.snp.makeConstraints { make in
-            make.top.equalTo(containerView.snp.top)
-            make.trailing.equalTo(containerView.snp.trailing)
+            make.top.equalTo(containerView.snp.top).offset(10)
+            make.trailing.equalTo(containerView.snp.trailing).offset(-10)
             make.width.height.equalTo(40)
         }
     }

@@ -39,7 +39,7 @@ struct HomeViewLayout {
             make.right.equalTo(viewController.categoryButton)
         }
         viewController.collectionView.snp.makeConstraints { make in
-            make.top.equalTo(viewController.newArrivalTitleLabel.snp.bottom).offset(20)
+            make.top.equalTo(viewController.newArrivalTitleLabel.snp.bottom).offset(10)
             make.left.right.equalToSuperview()
             make.height.equalTo(250)
         }

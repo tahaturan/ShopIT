@@ -30,7 +30,7 @@ final class HomeViewController: UIViewController {
         setupCollectionView()
         setupUI()
         fetchProduct()
-        
+        searchBarContainer.delegate = self
     }
 }
 
@@ -114,4 +114,15 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 200, height: 200)
     }
+}
+
+//MARK: -
+extension HomeViewController: SearchBarContainerDelegate {
+    func searchBarDidBeginEditing() {
+        let searchViewController = SearchViewController()
+        searchViewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(searchViewController, animated: true)
+    }
+    
+    
 }

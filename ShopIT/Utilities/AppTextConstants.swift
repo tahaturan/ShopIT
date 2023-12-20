@@ -43,5 +43,6 @@ struct AppTextConstants {
     }
     struct CellIDs {
         static let homeCollectionViewID: String = "HomeCollectionID"
+        static let searchViewTableID: String = "SearchTableViewCell"
     }
 }

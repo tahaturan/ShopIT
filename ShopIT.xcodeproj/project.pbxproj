@@ -46,6 +46,9 @@
 		5FE2FCD52B31549A004BB731 /* ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD42B31549A004BB731 /* ProductRequest.swift */; };
 		5FE2FCD72B3182A0004BB731 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD62B3182A0004BB731 /* HomeCollectionViewCell.swift */; };
 		5FE2FCDA2B318E3B004BB731 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5FE2FCD92B318E3B004BB731 /* SDWebImage */; };
+		5FE2FCDC2B3278F7004BB731 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCDB2B3278F7004BB731 /* SearchViewController.swift */; };
+		5FE2FCDF2B327DF8004BB731 /* SearchViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCDE2B327DF8004BB731 /* SearchViewLayout.swift */; };
+		5FE2FCE12B3291D6004BB731 /* SearchViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCE02B3291D6004BB731 /* SearchViewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		5FE2FCD22B3152A3004BB731 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5FE2FCD42B31549A004BB731 /* ProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequest.swift; sourceTree = "<group>"; };
 		5FE2FCD62B3182A0004BB731 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		5FE2FCDB2B3278F7004BB731 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5FE2FCDE2B327DF8004BB731 /* SearchViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewLayout.swift; sourceTree = "<group>"; };
+		5FE2FCE02B3291D6004BB731 /* SearchViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +241,7 @@
 				5FE2FCB72B2FAC01004BB731 /* BasketViewController.swift */,
 				5FE2FCB92B2FAC12004BB731 /* ProfileViewController.swift */,
 				5FE2FCBB2B2FACAC004BB731 /* FavoriteViewController.swift */,
+				5FE2FCDD2B327BDB004BB731 /* SearchViewControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -251,6 +258,7 @@
 				5FE2FCBF2B30F0A0004BB731 /* CategoryListButtons.swift */,
 				5FE2FCC82B311587004BB731 /* SearchBarContainer.swift */,
 				5FE2FCD62B3182A0004BB731 /* HomeCollectionViewCell.swift */,
+				5FE2FCE02B3291D6004BB731 /* SearchViewTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +307,15 @@
 				5FE2FCD42B31549A004BB731 /* ProductRequest.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		5FE2FCDD2B327BDB004BB731 /* SearchViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5FE2FCDB2B3278F7004BB731 /* SearchViewController.swift */,
+				5FE2FCDE2B327DF8004BB731 /* SearchViewLayout.swift */,
+			);
+			path = SearchViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE2FCDF2B327DF8004BB731 /* SearchViewLayout.swift in Sources */,
 				5FE2FCB82B2FAC01004BB731 /* BasketViewController.swift in Sources */,
 				5FE2FCA92B2E9F76004BB731 /* CircularIconButton.swift in Sources */,
 				5FE2FCBE2B30EB25004BB731 /* CustomCategoryButton.swift in Sources */,
@@ -450,6 +468,7 @@
 				5FE2FCB42B2FABBA004BB731 /* MainTabbarController.swift in Sources */,
 				5FE2FCD72B3182A0004BB731 /* HomeCollectionViewCell.swift in Sources */,
 				5FE2FCCF2B3150F1004BB731 /* APIEndpoint.swift in Sources */,
+				5FE2FCDC2B3278F7004BB731 /* SearchViewController.swift in Sources */,
 				5FE2FCD32B3152A3004BB731 /* NetworkService.swift in Sources */,
 				5FE2FCCC2B3117D9004BB731 /* HomeViewLayout.swift in Sources */,
 				5F60FF2A2B2AA90400E92218 /* AppDelegate.swift in Sources */,
@@ -463,6 +482,7 @@
 				5FE2FCB22B2ED121004BB731 /* CustomCheckButton.swift in Sources */,
 				5FE2FCAB2B2EAEF7004BB731 /* Extensions.swift in Sources */,
 				5F60FF692B2ACB8400E92218 /* AppTextConstants.swift in Sources */,
+				5FE2FCE12B3291D6004BB731 /* SearchViewTableViewCell.swift in Sources */,
 				5FE2FCC02B30F0A0004BB731 /* CategoryListButtons.swift in Sources */,
 				5FE2FCD52B31549A004BB731 /* ProductRequest.swift in Sources */,
 				5FE2FCC92B311587004BB731 /* SearchBarContainer.swift in Sources */,
