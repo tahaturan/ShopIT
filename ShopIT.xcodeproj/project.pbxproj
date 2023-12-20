@@ -45,6 +45,7 @@
 		5FE2FCD32B3152A3004BB731 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD22B3152A3004BB731 /* NetworkService.swift */; };
 		5FE2FCD52B31549A004BB731 /* ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD42B31549A004BB731 /* ProductRequest.swift */; };
 		5FE2FCD72B3182A0004BB731 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2FCD62B3182A0004BB731 /* HomeCollectionViewCell.swift */; };
+		5FE2FCDA2B318E3B004BB731 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5FE2FCD92B318E3B004BB731 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 			files = (
 				5FE2FCC52B310D05004BB731 /* Alamofire in Frameworks */,
 				5F60FF642B2AAC8800E92218 /* SnapKit in Frameworks */,
+				5FE2FCDA2B318E3B004BB731 /* SDWebImage in Frameworks */,
 				5FE2FCAE2B2EB2C5004BB731 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +321,7 @@
 				5F60FF632B2AAC8800E92218 /* SnapKit */,
 				5FE2FCAD2B2EB2C5004BB731 /* IQKeyboardManagerSwift */,
 				5FE2FCC42B310D05004BB731 /* Alamofire */,
+				5FE2FCD92B318E3B004BB731 /* SDWebImage */,
 			);
 			productName = ShopIT;
 			productReference = 5F60FF262B2AA90400E92218 /* ShopIT.app */;
@@ -396,6 +399,7 @@
 				5F60FF622B2AAC8800E92218 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5FE2FCAC2B2EB2C5004BB731 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				5FE2FCC32B310D05004BB731 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5FE2FCD82B318E3B004BB731 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 5F60FF272B2AA90400E92218 /* Products */;
 			projectDirPath = "";
@@ -831,6 +835,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		5FE2FCD82B318E3B004BB731 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.18.7;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -848,6 +860,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5FE2FCC32B310D05004BB731 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		5FE2FCD92B318E3B004BB731 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FE2FCD82B318E3B004BB731 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

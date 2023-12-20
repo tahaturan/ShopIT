@@ -7,6 +7,7 @@
 
 import SnapKit
 import UIKit
+import SDWebImage
 
 class HomeCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
@@ -37,7 +38,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         let containerView: UIView = UIView()
 
         let imageView: UIImageView = UIImageView()
-        imageView.image = .facebook
+        imageView.sd_setImage(with: URL(string: product.image))
         imageView.contentMode = .scaleAspectFit
         containerView.addSubview(imageView)
 
