@@ -35,12 +35,13 @@ final class SearchViewController: UIViewController {
     }()
     let showResultLabel: UILabel = {
        let label = UILabel()
-        label.text = "Search results showing for ''"
+        label.text = "Search results showing for "
         label.font = Theme.Font.normalBoldFont
         return label
     }()
     var collectionView: UICollectionView!
     private var products: [ProductElement] = []
+    private var filteredProducts: [ProductElement] = []
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,6 +106,16 @@ extension SearchViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // arama islemi
+        showResultLabel.text = "Search results showing for '\(searchText)'"
+        if searchText.isEmpty {
+            filteredProducts = products
+        } else {
+            filteredProducts = products.filter({ product in
+                return product.title.lowercased().contains(searchText.lowercased())
+            })
+            
+        }
+        collectionView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -116,11 +127,11 @@ extension SearchViewController: UISearchBarDelegate {
 //MARK: - UICollectionView Delegate/DataSource
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products.count
+        return  filteredProducts.isEmpty ? products.count:filteredProducts.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppTextConstants.CellIDs.homeCollectionViewID, for: indexPath) as! HomeCollectionViewCell
-        let product = products[indexPath.row]
+        let product = filteredProducts.isEmpty ?  products[indexPath.row]:filteredProducts[indexPath.row]
         cell.setupViews(product: product)
         return cell
     }
