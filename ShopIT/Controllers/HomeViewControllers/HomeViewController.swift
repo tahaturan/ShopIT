@@ -116,13 +116,29 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-//MARK: -
+//MARK: - SearchBarContainerDelegate
 extension HomeViewController: SearchBarContainerDelegate {
+    func filterButtonWasTapped() {
+        let filterViewController = FilterViewController()
+       
+        //let navigationController = UINavigationController(rootViewController: filterViewController)
+        
+        filterViewController.modalPresentationStyle = .pageSheet
+        
+        if let sheetController = filterViewController.sheetPresentationController {
+            sheetController.detents = [.custom(resolver: { context in
+                
+                return self.view.frame.height * 0.72
+            })]
+            sheetController.preferredCornerRadius = 30
+        }
+       
+        present(filterViewController, animated: true)
+    }
+    
     func searchBarDidBeginEditing() {
         let searchViewController = SearchViewController()
         searchViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(searchViewController, animated: true)
     }
-    
-    
 }

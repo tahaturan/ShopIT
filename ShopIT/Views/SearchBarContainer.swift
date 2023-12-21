@@ -11,6 +11,7 @@ import UIKit
 
 protocol SearchBarContainerDelegate: AnyObject {
     func searchBarDidBeginEditing()
+    func filterButtonWasTapped()
 }
 
 class SearchBarContainer: UIView {
@@ -37,6 +38,7 @@ class SearchBarContainer: UIView {
         super.init(frame: frame)
         setupViews()
         searchBar.delegate = self
+        searchFilterButton.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
     }
 
     required init?(coder: NSCoder) {
@@ -67,11 +69,18 @@ class SearchBarContainer: UIView {
     }
 }
 
-//MARK: -
+//MARK: - UISearchBarDelegate
 extension SearchBarContainer: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         delegate?.searchBarDidBeginEditing()
         return false
+    }
+}
+
+//MARK: - Selector
+extension SearchBarContainer {
+    @objc private func filterButtonTapped() {
+        delegate?.filterButtonWasTapped()
     }
 }
