@@ -17,8 +17,8 @@ final class HomeViewController: UIViewController {
     let subTitleLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: AppTextConstants.HomeViewController.subTitle)
     let searchBarContainer: SearchBarContainer = SearchBarContainer()
     let categoryButton: CategoryListButtons = CategoryListButtons()
-    let newArrivalTitleLabel: CustomLabel = CustomLabel(labelType: .title, text: "New Arrival")
-    let seeAllLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: "See All")
+    let newArrivalTitleLabel: CustomLabel = CustomLabel(labelType: .title, text: AppTextConstants.FilterViewController.newArrival)
+    let seeAllLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: AppTextConstants.HomeViewController.seeAll)
     
     var products: [ProductElement] = []
     
@@ -128,7 +128,7 @@ extension HomeViewController: SearchBarContainerDelegate {
         if let sheetController = filterViewController.sheetPresentationController {
             sheetController.detents = [.custom(resolver: { context in
                 
-                return self.view.frame.height * 0.72
+                return self.view.frame.height * 0.65
             })]
             sheetController.preferredCornerRadius = 30
         }

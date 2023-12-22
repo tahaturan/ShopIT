@@ -20,6 +20,13 @@ struct FilterViewLayout {
         vc.view.addSubview(vc.featuredProductsButton)
         vc.view.addSubview(vc.pricingLabel)
         vc.view.addSubview(vc.pricingPriceLabel)
+        vc.view.addSubview(vc.priceMinSlider)
+        vc.view.addSubview(vc.priceMaxSlider)
+        vc.view.addSubview(vc.distanceLabel)
+        vc.view.addSubview(vc.distanceValueLabel)
+        vc.view.addSubview(vc.distanceMinSlider)
+        vc.view.addSubview(vc.distanceMaxSlider)
+        vc.view.addSubview(vc.applyButton)
         
         vc.clearButton.snp.makeConstraints { make in
             make.top.equalTo(vc.view.safeAreaLayoutGuide).offset(15)
@@ -68,6 +75,39 @@ struct FilterViewLayout {
         vc.pricingPriceLabel.snp.makeConstraints { make in
             make.top.equalTo(vc.pricingLabel).offset(6)
             make.right.equalTo(vc.closeButton)
+        }
+        vc.priceMinSlider.snp.makeConstraints { make in
+            make.top.equalTo(vc.pricingLabel.snp.bottom).offset(50)
+            make.left.equalToSuperview()
+            make.width.equalTo(vc.view.frame.width / 2)
+        }
+        vc.priceMaxSlider.snp.makeConstraints { make in
+            make.top.equalTo(vc.priceMinSlider)
+            make.left.equalTo(vc.priceMinSlider.snp.right).offset(-2.5)
+            make.width.equalTo(vc.view.frame.width / 2)
+        }
+        vc.distanceLabel.snp.makeConstraints { make in
+            make.top.equalTo(vc.priceMinSlider.snp.bottom).offset(20)
+            make.left.equalTo(vc.pricingLabel)
+        }
+        vc.distanceValueLabel.snp.makeConstraints { make in
+            make.top.equalTo(vc.distanceLabel).offset(6)
+            make.right.equalTo(vc.pricingPriceLabel)
+        }
+        vc.distanceMinSlider.snp.makeConstraints { make in
+            make.top.equalTo(vc.distanceLabel.snp.bottom).offset(50)
+            make.left.equalToSuperview()
+            make.width.equalTo(vc.priceMinSlider)
+        }
+        vc.distanceMaxSlider.snp.makeConstraints { make in
+            make.top.equalTo(vc.distanceMinSlider)
+            make.left.equalTo(vc.distanceMinSlider.snp.right).offset(-2.5)
+            make.width.equalTo(vc.priceMaxSlider)
+        }
+        vc.applyButton.snp.makeConstraints { make in
+            make.top.equalTo(vc.distanceMinSlider.snp.bottom).offset(50)
+            make.left.right.equalToSuperview().inset(40)
+            make.height.equalTo(Theme.Size.primaryButtonHeight)
         }
     }
 }

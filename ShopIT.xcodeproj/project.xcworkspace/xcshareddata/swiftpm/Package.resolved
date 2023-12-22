@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "rangeslider",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/warchimede/RangeSlider.git",
+      "state" : {
+        "revision" : "04ddecea8b0b4d267420c72aa8f5005844d841e6",
+        "version" : "1.2.0"
+      }
+    },
+    {
       "identity" : "sdwebimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage",

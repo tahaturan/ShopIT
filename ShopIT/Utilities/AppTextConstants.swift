@@ -40,6 +40,20 @@ struct AppTextConstants {
         static let search = NSLocalizedString("Search", comment: "")
         static let title = NSLocalizedString("Explore", comment: "")
         static let subTitle = NSLocalizedString("best Outfits for you", comment: "")
+        static let seeAll = NSLocalizedString("See All", comment: "")
+    }
+    struct FilterViewController {
+        static let clear = NSLocalizedString("Clear", comment: "")
+        static let filters = NSLocalizedString("Filters", comment: "")
+        static let category = NSLocalizedString("Category", comment: "")
+        static let newArrival = NSLocalizedString("New Arrival", comment: "")
+        static let topTranding = NSLocalizedString("Top Tranding", comment: "")
+        static let featuredProducts = NSLocalizedString("Featured Products", comment: "")
+        static let pricing = NSLocalizedString("Pricing", comment: "")
+        static let distance = NSLocalizedString("Distance", comment: "")
+        static let applyFilter = NSLocalizedString("Apply Filter", comment: "")
+
+        
     }
     struct CellIDs {
         static let homeCollectionViewID: String = "HomeCollectionID"
