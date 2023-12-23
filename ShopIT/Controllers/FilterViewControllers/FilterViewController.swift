@@ -55,12 +55,12 @@ final class FilterViewController: UIViewController {
     let distanceLabel: CustomLabel = CustomLabel(labelType: .title, text: AppTextConstants.FilterViewController.distance)
     lazy var distanceValueLabel: UILabel = {
         let label = UILabel()
-        label.text = "1km-100km"
+        label.text = "0km-100km"
         label.font = Theme.Font.normalBoldFont
         return label
     }()
 
-    lazy var distanceMinSlider: CustomSliderView = CustomSliderView(minValue: 1, maxValue: 100, tag: 3)
+    lazy var distanceMinSlider: CustomSliderView = CustomSliderView(minValue: 0, maxValue: 100, tag: 3)
     lazy var distanceMaxSlider: CustomSliderView = CustomSliderView(minValue: 100, maxValue: 500, tag: 4)
     lazy var applyButton: PrimaryButton = PrimaryButton(title: AppTextConstants.FilterViewController.applyFilter)
 
@@ -107,10 +107,10 @@ extension FilterViewController {
             return pricingPriceLabel.text = "$\(senderminValue) - $\(senderMaxValue)"
         case 3:
             senderminValue = Int(sender.value)
-            return distanceValueLabel.text = "$\(senderminValue) - $\(senderMaxValue)"
+            return distanceValueLabel.text = "\(senderminValue)km - \(senderMaxValue)km"
         case 4:
             senderMaxValue = Int(sender.value)
-            return distanceValueLabel.text = "$\(senderminValue) - $\(senderMaxValue)"
+            return distanceValueLabel.text = "\(senderminValue)km - \(senderMaxValue)km"
         default:
             return pricingPriceLabel.text = "$0 - $\(formatString)"
         }

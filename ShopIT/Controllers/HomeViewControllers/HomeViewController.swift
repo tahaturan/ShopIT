@@ -108,6 +108,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.setupViews(product: product)
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = products[indexPath.row]
+        let detailViewController = DetailViewController()
+        detailViewController.product = product
+        detailViewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(detailViewController, animated: true)
+        
+    }
 }
 //MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

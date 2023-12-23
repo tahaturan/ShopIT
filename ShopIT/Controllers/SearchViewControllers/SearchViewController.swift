@@ -55,6 +55,13 @@ final class SearchViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = false
     }
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    override func viewWillAppear(_ animated: Bool) {
+       navigationController?.isNavigationBarHidden = true
+    }
+ 
 }
 //MARK: - Helper
 extension SearchViewController {
@@ -134,6 +141,13 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let product = filteredProducts.isEmpty ?  products[indexPath.row]:filteredProducts[indexPath.row]
         cell.setupViews(product: product)
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = products[indexPath.row]
+        let detailViewController = DetailViewController()
+        detailViewController.product = product
+        detailViewController.navigationController?.isNavigationBarHidden = true
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 //MARK: - UICollectionViewDelegateFlowLayout
