@@ -10,6 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
     //MARK: - Properties
     var product: ProductElement?
+    private let realmService = RealmService()
     let productImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -27,7 +28,7 @@ class DetailViewController: UIViewController {
     }()
     let backButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+        button.setImage(.backIcon, for: .normal)
         button.tintColor = .darkGray
         return button
     }()
@@ -96,7 +97,7 @@ extension DetailViewController {
     }
     private func buttonTarget() {
         backButton.addTarget(self, action: #selector(backButtonTapped(_:)), for: .touchUpInside)
-        addCartButton.addTarget(self, action: #selector(backButtonTapped(_:)), for: .touchUpInside)
+        addCartButton.addTarget(self, action: #selector(addButtonTapped(_:)), for: .touchUpInside)
         
     }
 }
@@ -104,5 +105,11 @@ extension DetailViewController {
 extension DetailViewController {
     @objc private func backButtonTapped(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+    @objc private func addButtonTapped(_ sender: UIButton) {
+        if let product = product {
+            realmService.addProductToCart(product: product)
+            showAlert(title: "Success", message: "\(product.title) added To Cart")
+        }
     }
 }

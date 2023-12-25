@@ -122,7 +122,7 @@ extension WelcomeViewController: UIPageViewControllerDataSource, UIPageViewContr
 //MARK: - OnboardViewControllerDelegate
 extension WelcomeViewController: OnboardViewControllerDelegate {
     func startButtonTapped(_ sender: UIButton) {
-        UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
+        UserDefaults.standard.set(false, forKey: "hasCompletedOnboarding")
         let loginVC = LoginViewController()
         let navigationController = UINavigationController(rootViewController: loginVC)
         navigationController.modalPresentationStyle = .fullScreen
@@ -134,7 +134,7 @@ extension WelcomeViewController: OnboardViewControllerDelegate {
 extension WelcomeViewController {
 
     @objc private func skipButtonTapped(_ sender: UIButton) {
-        UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
+        UserDefaults.standard.set(false, forKey: "hasCompletedOnboarding")
         let loginVC = LoginViewController()
         let navigationController = UINavigationController(rootViewController: loginVC)
         navigationController.modalPresentationStyle = .fullScreen
