@@ -21,6 +21,7 @@ final class HomeViewController: UIViewController {
     let seeAllLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: AppTextConstants.HomeViewController.seeAll)
     
     var products: [ProductElement] = []
+  private let realm: RealmService = RealmService()
     
     var collectionView: UICollectionView!
     // MARK: - LifeCycle
@@ -31,6 +32,11 @@ final class HomeViewController: UIViewController {
         setupUI()
         fetchProduct()
         searchBarContainer.delegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.updateUI()
+        }
     }
 }
 
@@ -83,6 +89,10 @@ extension HomeViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
+    private func isProductFavorited(productId: Int) -> Bool{
+        let favoriteItems = realm.getFavoriteItems()
+        return favoriteItems.contains(where: {$0.productID == productId})
+    }
 }
 
 // MARK: - Factory Methods
@@ -105,6 +115,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppTextConstants.CellIDs.homeCollectionViewID, for: indexPath) as! HomeCollectionViewCell
         let product = products[indexPath.row]
+        let isProductFavorited = isProductFavorited(productId: product.id)
+        cell.isFavorite = isProductFavorited
+        cell.delegate = self
         cell.setupViews(product: product)
         return cell
     }
@@ -124,12 +137,28 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: - HomeCollectionViewCellProtocol
+extension HomeViewController: HomeCollectionViewCellProtocol {
+    func didTapFavoriteButton(in cell: HomeCollectionViewCell, sender: UIButton) {
+        guard let indexPath = collectionView.indexPath(for: cell) else { return }
+        let product = products[indexPath.row]
+        
+        let isFavorited = isProductFavorited(productId: product.id)
+        if isFavorited {
+            realm.removeProductFromFavorite(productId: product.id)
+        } else {
+            realm.addProductToFavorite(product: product)
+        }
+        cell.isFavorite = !cell.isFavorite
+        collectionView.reloadItems(at: [indexPath])
+    }
+}
+
 //MARK: - SearchBarContainerDelegate
 extension HomeViewController: SearchBarContainerDelegate {
     func filterButtonWasTapped() {
         let filterViewController = FilterViewController()
        
-        //let navigationController = UINavigationController(rootViewController: filterViewController)
         
         filterViewController.modalPresentationStyle = .pageSheet
         

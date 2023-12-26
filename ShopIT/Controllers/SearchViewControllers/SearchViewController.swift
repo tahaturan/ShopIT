@@ -9,6 +9,7 @@ import UIKit
 
 final class SearchViewController: UIViewController {
     //MARK: - Propeties
+    private let realm: RealmService = RealmService()
      let searchBar: UISearchBar = {
        let searchBar = UISearchBar()
         searchBar.sizeToFit()
@@ -60,6 +61,9 @@ final class SearchViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
        navigationController?.isNavigationBarHidden = true
+        DispatchQueue.main.async {
+            self.updateUI()
+        }
     }
  
 }
@@ -107,6 +111,10 @@ extension SearchViewController {
     private func displayError(_ error: Error) {
         
     }
+    private func isProductFavorited(productId: Int) -> Bool{
+        let favoriteItems = realm.getFavoriteItems()
+        return favoriteItems.contains(where: {$0.productID == productId})
+    }
 }
 
 //MARK: - UISearchBarDelegate
@@ -139,6 +147,9 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppTextConstants.CellIDs.homeCollectionViewID, for: indexPath) as! HomeCollectionViewCell
         let product = filteredProducts.isEmpty ?  products[indexPath.row]:filteredProducts[indexPath.row]
+        let isProductFavorited = isProductFavorited(productId: product.id)
+        cell.isFavorite = isProductFavorited
+        cell.delegate = self
         cell.setupViews(product: product)
         return cell
     }
@@ -154,5 +165,21 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 150, height: 200)
+    }
+}
+//MARK: - HomeCollectionViewCellProtocol
+extension SearchViewController: HomeCollectionViewCellProtocol {
+    func didTapFavoriteButton(in cell: HomeCollectionViewCell, sender: UIButton) {
+        guard let indexPath = collectionView.indexPath(for: cell) else { return }
+        let product = products[indexPath.row]
+        
+        let isFavorited = isProductFavorited(productId: product.id)
+        if isFavorited {
+            realm.removeProductFromFavorite(productId: product.id)
+        } else {
+            realm.addProductToFavorite(product: product)
+        }
+        cell.isFavorite = !cell.isFavorite
+        collectionView.reloadItems(at: [indexPath])
     }
 }

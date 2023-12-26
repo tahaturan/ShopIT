@@ -61,6 +61,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         setupUI()
+        updateFavoriteButton()
     }
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
@@ -81,12 +82,10 @@ class DetailViewController: UIViewController {
 extension DetailViewController {
     private func setupUI() {
         view.backgroundColor = .white
-        
         DetailViewLayout.setupLayout(of: self)
         setupProduct()
         buttonTarget()
     }
-
     private func setupProduct() {
         if let product = product {
             productImageView.sd_setImage(with: URL(string: product.image))
@@ -98,7 +97,21 @@ extension DetailViewController {
     private func buttonTarget() {
         backButton.addTarget(self, action: #selector(backButtonTapped(_:)), for: .touchUpInside)
         addCartButton.addTarget(self, action: #selector(addButtonTapped(_:)), for: .touchUpInside)
-        
+        favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped(_:)), for: .touchUpInside)
+    }
+    private func isProductFavorited(productId: Int) -> Bool{
+        let favoriteItems = realmService.getFavoriteItems()
+        return favoriteItems.contains(where: {$0.productID == productId})
+    }
+    private func updateFavoriteButton() {
+        if let product = product {
+            if isProductFavorited(productId: product.id) {
+                DispatchQueue.main.async {
+                    self.favoriteButton.tintColor = .red
+                    self.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                }
+            }
+        }
     }
 }
 //MARK: - Selector
@@ -110,6 +123,24 @@ extension DetailViewController {
         if let product = product {
             realmService.addProductToCart(product: product)
             showAlert(title: "Success", message: "\(product.title) added To Cart")
+        }
+    }
+    @objc private func favoriteButtonTapped(_ sender: UIButton) {
+        if let product = product {
+            let isFavorited = isProductFavorited(productId: product.id)
+            if isFavorited {
+                realmService.removeProductFromFavorite(productId: product.id)
+                DispatchQueue.main.async {
+                    sender.tintColor = .black
+                    sender.setImage(UIImage(systemName: "heart"), for: .normal)
+                }
+            } else {
+                realmService.addProductToFavorite(product: product)
+                DispatchQueue.main.async {
+                    sender.tintColor = .red
+                    sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                }
+            }
         }
     }
 }

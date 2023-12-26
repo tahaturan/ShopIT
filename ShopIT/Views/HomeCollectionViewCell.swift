@@ -9,6 +9,10 @@ import SDWebImage
 import SnapKit
 import UIKit
 
+protocol HomeCollectionViewCellProtocol {
+    func didTapFavoriteButton(in cell: HomeCollectionViewCell, sender: UIButton)
+}
+
 class HomeCollectionViewCell: UICollectionViewCell {
     private let containerView: UIView = UIView()
     private let productImageView: UIImageView = {
@@ -38,32 +42,41 @@ class HomeCollectionViewCell: UICollectionViewCell {
         return priceLabel
     }()
 
+    var delegate: HomeCollectionViewCellProtocol?
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureCell()
+        containerView.isUserInteractionEnabled = true
+        favoriteButton.isUserInteractionEnabled = true
+        favoriteButton.addTarget(self, action: #selector(favoriteButtonTapped(_:)), for: .touchUpInside)
     }
-
+    
+    var isFavorite: Bool = false {
+        didSet {
+            let imageName = isFavorite ? "heart.fill" : "heart"
+            favoriteButton.setImage(UIImage(systemName: imageName), for: .normal)
+            favoriteButton.tintColor = isFavorite ? .red : .black
+        }
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     private func configureCell() {
-        backgroundColor = .white
+        backgroundColor = .viewBackround
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.1
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowRadius = 10
-        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
-        layer.shouldRasterize = true
-        layer.rasterizationScale = UIScreen.main.scale
         layer.cornerRadius = 15
         clipsToBounds = false
 
+        self.contentView.addSubview(containerView)
         containerView.addSubview(productImageView)
         containerView.addSubview(productTitleLabel)
         containerView.addSubview(priceLabel)
-        containerView.addSubview(favoriteButton)
-        addSubview(containerView)
+        self.contentView.addSubview(favoriteButton)
+        
 
         containerView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
@@ -95,5 +108,18 @@ class HomeCollectionViewCell: UICollectionViewCell {
         productImageView.sd_setImage(with: URL(string: product.image))
         productTitleLabel.text = product.title
         priceLabel.text = "\(product.price)$"
+    }
+    func setupFavorite(favoriteItem: FavoriteItem)  {
+        productImageView.sd_setImage(with: URL(string: favoriteItem.imageUrl))
+        productTitleLabel.text = favoriteItem.name
+        priceLabel.text = "\(favoriteItem.price)$"
+        favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        favoriteButton.tintColor = .red
+    }
+}
+//MARK: - Selector
+extension HomeCollectionViewCell {
+    @objc private func favoriteButtonTapped(_ sender: UIButton) {
+        delegate?.didTapFavoriteButton(in: self, sender: sender)
     }
 }

@@ -65,7 +65,8 @@ class RealmService {
             realm.delete(cartItem)
         })
     }
-    func removeProductFromFavorite(favoriteItem: FavoriteItem)  {
+    func removeProductFromFavorite(productId: Int)  {
+        guard let favoriteItem = realm.objects(FavoriteItem.self).filter("productID == \(productId)").first else { return }
         try! realm.write({
             realm.delete(favoriteItem)
         })
