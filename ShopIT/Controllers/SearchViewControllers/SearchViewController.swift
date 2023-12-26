@@ -19,7 +19,7 @@ final class SearchViewController: UIViewController {
     }()
     let recentSearchLabel: UILabel = {
        let label = UILabel()
-        label.text = "Recent searches"
+        label.text = AppTextConstants.SearchViewController.recentSearches
         label.font = Theme.Font.normalBoldFont
         return label
     }()
@@ -36,7 +36,7 @@ final class SearchViewController: UIViewController {
     }()
     let showResultLabel: UILabel = {
        let label = UILabel()
-        label.text = "Search results showing for "
+        label.text = AppTextConstants.SearchViewController.searchResults
         label.font = Theme.Font.normalBoldFont
         return label
     }()
@@ -121,7 +121,7 @@ extension SearchViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // arama islemi
-        showResultLabel.text = "Search results showing for '\(searchText)'"
+        showResultLabel.text = "\(AppTextConstants.SearchViewController.searchResults) '\(searchText)'"
         if searchText.isEmpty {
             filteredProducts = products
         } else {

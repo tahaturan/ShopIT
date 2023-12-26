@@ -52,8 +52,23 @@ struct AppTextConstants {
         static let pricing = NSLocalizedString("Pricing", comment: "")
         static let distance = NSLocalizedString("Distance", comment: "")
         static let applyFilter = NSLocalizedString("Apply Filter", comment: "")
-
-        
+    }
+    struct BasketViewController {
+        static let subtotal = NSLocalizedString("Subtotal :", comment: "")
+        static let checkout = NSLocalizedString("Checkout", comment: "")
+        static let myCart = NSLocalizedString("My Cart", comment: "")
+    }
+    struct DetailViewController {
+        static let addToCart = NSLocalizedString("Add to Cart", comment: "")
+        static let success = NSLocalizedString("Success", comment: "")
+        static let addedToCart = NSLocalizedString("added To Cart", comment: "")
+    }
+    struct FavoriteViewController {
+        static let favorite = NSLocalizedString("Favorite", comment: "")
+    }
+    struct SearchViewController {
+        static let searchResults = NSLocalizedString("Search results showing for ", comment: "")
+        static let recentSearches = NSLocalizedString("Recent searches", comment: "")
     }
     struct CellIDs {
         static let homeCollectionViewID: String = "HomeCollectionID"

@@ -25,6 +25,7 @@ enum Theme {
         static let socialButonSize: CGSize = CGSize(width: 70, height: 70)
         static let socialIconSize: CGSize = CGSize(width: 30, height: 30)
         static let tabbarIconSize: CGSize = CGSize(width: 24.0, height: 24.0)
+        static let profileImageViewSize = CGSize(width: 150, height: 150)
     }
     
     enum IconName {

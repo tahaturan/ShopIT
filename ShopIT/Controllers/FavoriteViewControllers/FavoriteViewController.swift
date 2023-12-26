@@ -41,7 +41,7 @@ extension FavoriteViewController {
         view.backgroundColor = .viewBackround
         updateView()
         FavoriteViewLayout.setupLayout(on: self)
-        navigationItem.title = "Favorite"
+        navigationItem.title = AppTextConstants.FavoriteViewController.favorite
         
     }
 

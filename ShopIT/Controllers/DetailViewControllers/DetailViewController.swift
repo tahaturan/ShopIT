@@ -55,7 +55,7 @@ class DetailViewController: UIViewController {
         label.textColor = .lightGray
         return label
     }()
-    let addCartButton: PrimaryButton = PrimaryButton(title: "Add to Cart")
+    let addCartButton: PrimaryButton = PrimaryButton(title: AppTextConstants.DetailViewController.addToCart)
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +122,7 @@ extension DetailViewController {
     @objc private func addButtonTapped(_ sender: UIButton) {
         if let product = product {
             realmService.addProductToCart(product: product)
-            showAlert(title: "Success", message: "\(product.title) added To Cart")
+            showAlert(title: AppTextConstants.DetailViewController.success, message: "\(product.title) \(AppTextConstants.DetailViewController.addedToCart)")
         }
     }
     @objc private func favoriteButtonTapped(_ sender: UIButton) {

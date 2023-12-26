@@ -23,12 +23,12 @@ class BasketViewController: UIViewController {
     let tableView: UITableView = UITableView()
     let subTotalLabel: UILabel = {
         let label = UILabel()
-        label.text = "Subtotal :"
+        label.text = AppTextConstants.BasketViewController.subtotal
         return label
     }()
 
     let totalPriceLabel = CustomLabel(labelType: .title, text: "")
-    let cehckoutButton: PrimaryButton = PrimaryButton(title: "Checkout")
+    let cehckoutButton: PrimaryButton = PrimaryButton(title: AppTextConstants.BasketViewController.checkout)
 
     // MARK: - LifeCycle
 
@@ -53,7 +53,7 @@ class BasketViewController: UIViewController {
 extension BasketViewController {
     private func setupUI() {
         view.backgroundColor = .viewBackround
-        navigationItem.title = "My Cart"
+        navigationItem.title = AppTextConstants.BasketViewController.myCart
         updateView()
         BasketViewLayout.setupLayout(of: self)
         updateView()
