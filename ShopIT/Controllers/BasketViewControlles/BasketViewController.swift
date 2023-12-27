@@ -29,7 +29,7 @@ class BasketViewController: UIViewController {
 
     let totalPriceLabel = CustomLabel(labelType: .title, text: "")
     let cehckoutButton: PrimaryButton = PrimaryButton(title: AppTextConstants.BasketViewController.checkout)
-
+    private var totalPrice = 0.0
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -57,6 +57,7 @@ extension BasketViewController {
         updateView()
         BasketViewLayout.setupLayout(of: self)
         updateView()
+        cehckoutButton.addTarget(self, action: #selector(checkoutButtonTapped(_:)), for: .touchUpInside)
     }
 
     private func updateView() {
@@ -86,7 +87,7 @@ extension BasketViewController {
     }
 
     private func configurePriceLabel() {
-        var totalPrice = 0.0
+        totalPrice = 0.0
         if cartItems.isEmpty {
         } else {
             for item in cartItems {
@@ -154,5 +155,14 @@ extension BasketViewController: BasketTableViewCellProtocol {
         })
         configurePriceLabel()
         tableView.reloadRows(at: [indexPath], with: .left)
+    }
+}
+//MARK: - Selector
+extension BasketViewController {
+    @objc private func checkoutButtonTapped(_ sender: UIButton) {
+        let checkoutVC = CheckoutViewController()
+        checkoutVC.hidesBottomBarWhenPushed = true
+        checkoutVC.subTotal = totalPrice
+        navigationController?.pushViewController(checkoutVC, animated: true)
     }
 }
