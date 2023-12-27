@@ -42,6 +42,11 @@ extension CheckoutViewController {
     private func setupUI() {
         navigationItem.title = "Checkout"
         view.backgroundColor = .viewBackround
+        navigationController?.navigationBar.backIndicatorImage = .backIcon
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = .backIcon
+        navigationController?.navigationBar.topItem?.backButtonTitle = ""
+        navigationController?.navigationBar.tintColor = .black
+        
         swipeButton.delegate = self
         CheckoutViewLayout.setupLayout(in: self)
     }
