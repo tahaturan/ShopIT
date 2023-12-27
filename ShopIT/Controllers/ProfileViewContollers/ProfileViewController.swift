@@ -27,6 +27,26 @@ class ProfileViewController: UIViewController {
     }()
     let nameLabel: CustomLabel = CustomLabel(labelType: .title, text: "Muhammed Taha Turan")
     let emailLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: "taha@gmail.com")
+    let progressButton: ProfileViewButton = ProfileViewButton(type: .progressOrder)
+    let promoCodeButton: ProfileViewButton = ProfileViewButton(type: .promocodes)
+    let reviewesButton: ProfileViewButton = ProfileViewButton(type: .reviewes)
+    lazy var buttonStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [progressButton, promoCodeButton, reviewesButton])
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.backgroundColor = .white
+        return stackView
+    }()
+    let informationLabel: UILabel = {
+        let label = UILabel()
+        label.font = Theme.Font.normalBoldFont
+        label.textColor = .black
+        label.text = "Personal Information"
+        return label
+    }()
+    lazy var informationView: ProfileInfoView = ProfileInfoView()
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +56,7 @@ class ProfileViewController: UIViewController {
 //MARK: - Helper
 extension ProfileViewController {
     private func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .viewBackround
         ProfileViewLayout.setupProfileLayout(on: self)
         navigationItem.title = "Profile"
     }

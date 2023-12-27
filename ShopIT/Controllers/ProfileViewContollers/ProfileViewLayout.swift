@@ -14,6 +14,9 @@ struct ProfileViewLayout {
         vc.view.addSubview(vc.profileImageView)
         vc.view.addSubview(vc.nameLabel)
         vc.view.addSubview(vc.emailLabel)
+        vc.view.addSubview(vc.buttonStackView)
+        vc.view.addSubview(vc.informationLabel)
+        vc.view.addSubview(vc.informationView)
         
         vc.profileBackrounImage.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -32,6 +35,20 @@ struct ProfileViewLayout {
         vc.emailLabel.snp.makeConstraints { make in
             make.top.equalTo(vc.nameLabel.snp.bottom).offset(10)
             make.centerX.equalTo(vc.profileImageView)
+        }
+        vc.buttonStackView.snp.makeConstraints { make in
+            make.top.equalTo(vc.emailLabel.snp.bottom).offset(20)
+            make.left.right.equalToSuperview().inset(10)
+            make.height.equalTo(120)
+        }
+        vc.informationLabel.snp.makeConstraints { make in
+            make.top.equalTo(vc.buttonStackView.snp.bottom).offset(20)
+            make.left.equalTo(vc.buttonStackView)
+        }
+        vc.informationView.snp.makeConstraints { make in
+            make.top.equalTo(vc.informationLabel.snp.bottom).offset(20)
+            make.left.right.equalToSuperview().inset(30)
+            make.bottom.equalTo(vc.view.safeAreaLayoutGuide).offset(-40)
         }
     }
 }
