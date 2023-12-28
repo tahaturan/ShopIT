@@ -65,6 +65,7 @@ extension CheckoutViewController {
 //MARK: -
 extension CheckoutViewController: SwipeButtonProtocolDelagate {
     func didFinishSwipe() {
-        print("Okkey")
+        let successVC = SuccessViewController()
+        navigationController?.pushViewController(successVC, animated: true)
     }
 }

@@ -28,6 +28,10 @@
 		5F54B77C2B3C1057004640F8 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B77B2B3C1057004640F8 /* AddressView.swift */; };
 		5F54B77E2B3C4E05004640F8 /* BilingInfomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B77D2B3C4E05004640F8 /* BilingInfomationView.swift */; };
 		5F54B7802B3C986C004640F8 /* SwipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B77F2B3C986C004640F8 /* SwipeButton.swift */; };
+		5F54B7832B3D4264004640F8 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7822B3D4264004640F8 /* SuccessViewController.swift */; };
+		5F54B7862B3D46B9004640F8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5F54B7852B3D46B9004640F8 /* Lottie */; };
+		5F54B78A2B3D4A92004640F8 /* SuccessLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F54B7892B3D4A92004640F8 /* SuccessLottie.json */; };
+		5F54B78C2B3D4BD3004640F8 /* SuccessViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B78B2B3D4BD3004640F8 /* SuccessViewLayout.swift */; };
 		5F60FF2A2B2AA90400E92218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60FF292B2AA90400E92218 /* AppDelegate.swift */; };
 		5F60FF2C2B2AA90400E92218 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60FF2B2B2AA90400E92218 /* SceneDelegate.swift */; };
 		5F60FF332B2AA90500E92218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F60FF322B2AA90500E92218 /* Assets.xcassets */; };
@@ -108,6 +112,9 @@
 		5F54B77B2B3C1057004640F8 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		5F54B77D2B3C4E05004640F8 /* BilingInfomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilingInfomationView.swift; sourceTree = "<group>"; };
 		5F54B77F2B3C986C004640F8 /* SwipeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeButton.swift; sourceTree = "<group>"; };
+		5F54B7822B3D4264004640F8 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		5F54B7892B3D4A92004640F8 /* SuccessLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SuccessLottie.json; sourceTree = "<group>"; };
+		5F54B78B2B3D4BD3004640F8 /* SuccessViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewLayout.swift; sourceTree = "<group>"; };
 		5F60FF262B2AA90400E92218 /* ShopIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F60FF292B2AA90400E92218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F60FF2B2B2AA90400E92218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F54B7602B380B3E004640F8 /* RealmSwift in Frameworks */,
+				5F54B7862B3D46B9004640F8 /* Lottie in Frameworks */,
 				5FE2FCC52B310D05004BB731 /* Alamofire in Frameworks */,
 				5F60FF642B2AAC8800E92218 /* SnapKit in Frameworks */,
 				5FE2FCDA2B318E3B004BB731 /* SDWebImage in Frameworks */,
@@ -236,6 +244,15 @@
 			path = CheckOutViewControllers;
 			sourceTree = "<group>";
 		};
+		5F54B7812B3D4245004640F8 /* SuccessViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F54B7822B3D4264004640F8 /* SuccessViewController.swift */,
+				5F54B78B2B3D4BD3004640F8 /* SuccessViewLayout.swift */,
+			);
+			path = SuccessViewControllers;
+			sourceTree = "<group>";
+		};
 		5F60FF1D2B2AA90400E92218 = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				5F60FF322B2AA90500E92218 /* Assets.xcassets */,
+				5F54B7892B3D4A92004640F8 /* SuccessLottie.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -329,6 +347,7 @@
 		5F60FF5D2B2AAAD800E92218 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5F54B7812B3D4245004640F8 /* SuccessViewControllers */,
 				5F54B7762B3C0C0C004640F8 /* CheckOutViewControllers */,
 				5F54B7572B36C590004640F8 /* DetailViewControllers */,
 				5F54B74E2B33F7F3004640F8 /* FilterViewControllers */,
@@ -447,6 +466,7 @@
 				5FE2FCD92B318E3B004BB731 /* SDWebImage */,
 				5F54B75D2B380B3E004640F8 /* Realm */,
 				5F54B75F2B380B3E004640F8 /* RealmSwift */,
+				5F54B7852B3D46B9004640F8 /* Lottie */,
 			);
 			productName = ShopIT;
 			productReference = 5F60FF262B2AA90400E92218 /* ShopIT.app */;
@@ -526,6 +546,7 @@
 				5FE2FCC32B310D05004BB731 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5FE2FCD82B318E3B004BB731 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				5F54B75C2B380B3E004640F8 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				5F54B7842B3D46B9004640F8 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 5F60FF272B2AA90400E92218 /* Products */;
 			projectDirPath = "";
@@ -544,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F60FF362B2AA90500E92218 /* LaunchScreen.storyboard in Resources */,
+				5F54B78A2B3D4A92004640F8 /* SuccessLottie.json in Resources */,
 				5F60FF332B2AA90500E92218 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,12 +629,14 @@
 				5F54B7662B380D0A004640F8 /* RealmService.swift in Sources */,
 				5FE2FCD52B31549A004BB731 /* ProductRequest.swift in Sources */,
 				5F54B7732B3B2690004640F8 /* ProfileViewButton.swift in Sources */,
+				5F54B7832B3D4264004640F8 /* SuccessViewController.swift in Sources */,
 				5F54B7712B3AA336004640F8 /* ProfileViewLayout.swift in Sources */,
 				5FE2FCC92B311587004BB731 /* SearchBarContainer.swift in Sources */,
 				5FE2FCB62B2FABE7004BB731 /* HomeViewController.swift in Sources */,
 				5FE2FCBC2B2FACAC004BB731 /* FavoriteViewController.swift in Sources */,
 				5F60FF612B2AABD600E92218 /* OnboardViewController.swift in Sources */,
 				5F60FF6F2B2B5CB000E92218 /* PrimaryButton.swift in Sources */,
+				5F54B78C2B3D4BD3004640F8 /* SuccessViewLayout.swift in Sources */,
 				5FE2FCB02B2ECE54004BB731 /* SignUpViewController.swift in Sources */,
 				5F54B7752B3B4590004640F8 /* ProfileInfoView.swift in Sources */,
 				5FE2FCD12B315221004BB731 /* NetworkRequest.swift in Sources */,
@@ -966,6 +990,14 @@
 				kind = branch;
 			};
 		};
+		5F54B7842B3D46B9004640F8 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.4;
+			};
+		};
 		5F60FF622B2AAC8800E92218 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -1010,6 +1042,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5F54B75C2B380B3E004640F8 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		5F54B7852B3D46B9004640F8 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F54B7842B3D46B9004640F8 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		5F60FF632B2AAC8800E92218 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

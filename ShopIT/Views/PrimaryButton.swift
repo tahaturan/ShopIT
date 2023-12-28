@@ -11,19 +11,21 @@ import UIKit
 class PrimaryButton: UIButton {
     private let normalColor: UIColor = .main
     private let highlightedColor: UIColor = .main.withAlphaComponent(0.6)
-    init(title: String) {
+    private var isBack: Bool = false
+    init(title: String, isBack: Bool = false) {
         super.init(frame: .zero)
         setTitle(title, for: .normal)
-        setupButton()
+        self.isBack = isBack
+        setupButton(isBack: isBack)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupButton() {
-        setTitleColor(.white, for: .normal)
-        backgroundColor = .main
+    private func setupButton(isBack: Bool) {
+        setTitleColor(isBack ? .main : .white, for: .normal)
+        backgroundColor = isBack ? .main.withAlphaComponent(0.2) : .main
         titleLabel?.font = Theme.Font.primaryButtonFont
         layer.cornerRadius = Theme.Size.primaryButtonCornerRadius
     }
@@ -35,12 +37,12 @@ class PrimaryButton: UIButton {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        backgroundColor = normalColor
+        backgroundColor = isBack ?  normalColor.withAlphaComponent(0.2) : normalColor
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
-        backgroundColor = normalColor
+        backgroundColor = isBack ?  normalColor.withAlphaComponent(0.2) : normalColor
     }
     
 }
