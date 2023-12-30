@@ -11,6 +11,15 @@ import UIKit
 
 struct HomeViewLayout {
     static func setupLayout(for viewController: HomeViewController) {
+        viewController.view.backgroundColor = .viewBackround
+        viewController.view.addSubview(viewController.titleLabel)
+        viewController.view.addSubview(viewController.subTitleLabel)
+        viewController.view.addSubview(viewController.searchBarContainer)
+        viewController.view.addSubview(viewController.categoryButton)
+        viewController.view.addSubview(viewController.newArrivalTitleLabel)
+        viewController.view.addSubview(viewController.seeAllLabel)
+        viewController.view.addSubview(viewController.collectionView)
+        
         viewController.titleLabel.snp.makeConstraints { make in
             make.top.equalTo(viewController.view.safeAreaLayoutGuide).offset(30)
             make.left.equalToSuperview().offset(20)

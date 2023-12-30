@@ -9,7 +9,7 @@ import UIKit
 
 class MainTabbarController: UITabBarController, UITabBarControllerDelegate {
     //MARK: - Properties
-   private let homeViewController: UIViewController = HomeViewController()
+    private let homeViewController = HomeViewController()
     private let basketViewContorller: UIViewController = BasketViewController()
     private let favoriteViewController: UIViewController = FavoriteViewController()
     private let profileViewController: UIViewController = ProfileViewController()
@@ -18,6 +18,10 @@ class MainTabbarController: UITabBarController, UITabBarControllerDelegate {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowRadius = 10
         setupTabbar()
         setupSelectionIndicator()
         self.delegate = self

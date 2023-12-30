@@ -180,7 +180,7 @@ extension LoginViewController {
     }
     
     @objc private func loginButtonTapped() {
-        let mainTabbarController: UITabBarController = MainTabbarController()
+        let mainTabbarController = ContainerViewController()
         
         if let windowsScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let scneDelegate = windowsScene.delegate as? SceneDelegate {

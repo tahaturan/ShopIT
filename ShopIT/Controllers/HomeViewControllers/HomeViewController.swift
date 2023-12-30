@@ -8,7 +8,11 @@
 import SnapKit
 import UIKit
 
-final class HomeViewController: UIViewController {
+protocol HomeViewMenuProtocol {
+    func didTabMenuButton()
+}
+
+ class HomeViewController: UIViewController {
     // MARK: - Properties
 
     lazy var menuButton: UIButton = createNavButton(image: .menuIcon)
@@ -19,13 +23,12 @@ final class HomeViewController: UIViewController {
     let categoryButton: CategoryListButtons = CategoryListButtons()
     let newArrivalTitleLabel: CustomLabel = CustomLabel(labelType: .title, text: AppTextConstants.FilterViewController.newArrival)
     let seeAllLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: AppTextConstants.HomeViewController.seeAll)
-    
-    var products: [ProductElement] = []
-  private let realm: RealmService = RealmService()
-    
-    var collectionView: UICollectionView!
-    // MARK: - LifeCycle
 
+    var products: [ProductElement] = []
+    private let realm: RealmService = RealmService()
+    var collectionView: UICollectionView!
+    var delegate: HomeViewMenuProtocol?
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
@@ -33,6 +36,7 @@ final class HomeViewController: UIViewController {
         fetchProduct()
         searchBarContainer.delegate = self
     }
+
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async {
             self.updateUI()
@@ -44,16 +48,10 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController {
     private func setupUI() {
-        view.backgroundColor = .viewBackround
-        view.addSubview(titleLabel)
-        view.addSubview(subTitleLabel)
-        view.addSubview(searchBarContainer)
-        view.addSubview(categoryButton)
-        view.addSubview(newArrivalTitleLabel)
-        view.addSubview(seeAllLabel)
-        view.addSubview(collectionView)
+        
         HomeViewLayout.setupLayout(for: self)
         HomeViewLayout.setupNavigationBar(for: self)
+        menuButton.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
     }
 }
 
@@ -62,25 +60,26 @@ extension HomeViewController {
 extension HomeViewController {
     private func fetchProduct() {
         let request = ProductRequest(category: .jewelery)
-        request.perform {[weak self] result in
+        request.perform { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
-                case .success(let fetchedProducts):
+                case let .success(fetchedProducts):
                     self?.products = fetchedProducts
                     self?.updateUI()
-                case .failure(let error):
+                case let .failure(error):
                     self?.displayError(error)
                 }
             }
         }
     }
+
     private func updateUI() {
         collectionView.reloadData()
     }
+
     private func displayError(_ error: Error) {
-        
     }
-  
+
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -89,9 +88,15 @@ extension HomeViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-    private func isProductFavorited(productId: Int) -> Bool{
+
+    private func isProductFavorited(productId: Int) -> Bool {
         let favoriteItems = realm.getFavoriteItems()
-        return favoriteItems.contains(where: {$0.productID == productId})
+        return favoriteItems.contains(where: { $0.productID == productId })
+    }
+
+
+    @objc private func menuButtonTapped(_ sender: UIButton) {
+        delegate?.didTabMenuButton()
     }
 }
 
@@ -107,11 +112,13 @@ extension HomeViewController {
     }
 }
 
-//MARK: - UICollectionView Delegate/DataSource
+// MARK: - UICollectionView Delegate/DataSource
+
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return products.count
     }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppTextConstants.CellIDs.homeCollectionViewID, for: indexPath) as! HomeCollectionViewCell
         let product = products[indexPath.row]
@@ -121,28 +128,31 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.setupViews(product: product)
         return cell
     }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let product = products[indexPath.row]
         let detailViewController = DetailViewController()
         detailViewController.product = product
         detailViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(detailViewController, animated: true)
-        
     }
 }
-//MARK: - UICollectionViewDelegateFlowLayout
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 200, height: 200)
     }
 }
 
-//MARK: - HomeCollectionViewCellProtocol
+// MARK: - HomeCollectionViewCellProtocol
+
 extension HomeViewController: HomeCollectionViewCellProtocol {
     func didTapFavoriteButton(in cell: HomeCollectionViewCell, sender: UIButton) {
         guard let indexPath = collectionView.indexPath(for: cell) else { return }
         let product = products[indexPath.row]
-        
+
         let isFavorited = isProductFavorited(productId: product.id)
         if isFavorited {
             realm.removeProductFromFavorite(productId: product.id)
@@ -154,25 +164,25 @@ extension HomeViewController: HomeCollectionViewCellProtocol {
     }
 }
 
-//MARK: - SearchBarContainerDelegate
+// MARK: - SearchBarContainerDelegate
+
 extension HomeViewController: SearchBarContainerDelegate {
     func filterButtonWasTapped() {
         let filterViewController = FilterViewController()
-       
-        
+
         filterViewController.modalPresentationStyle = .pageSheet
-        
+
         if let sheetController = filterViewController.sheetPresentationController {
-            sheetController.detents = [.custom(resolver: { context in
-                
-                return self.view.frame.height * 0.65
+            sheetController.detents = [.custom(resolver: { _ in
+
+                self.view.frame.height * 0.65
             })]
             sheetController.preferredCornerRadius = 30
         }
-       
+
         present(filterViewController, animated: true)
     }
-    
+
     func searchBarDidBeginEditing() {
         let searchViewController = SearchViewController()
         searchViewController.hidesBottomBarWhenPushed = true
