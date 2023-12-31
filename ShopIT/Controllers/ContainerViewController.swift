@@ -17,10 +17,10 @@ class ContainerViewController: UIViewController, HomeViewMenuProtocol {
     private let menuWidth: CGFloat = 250 // Menü genişliği
     override func viewDidLoad() {
         super.viewDidLoad()
-        // MainTabBarController'ı ayarlayın
+        
         setupMainTabBarController()
 
-        // MenuViewController'ı ayarlayın
+        
         setupMenuViewController()
        
     }
@@ -39,11 +39,11 @@ class ContainerViewController: UIViewController, HomeViewMenuProtocol {
     private func setupMenuViewController() {
         menuViewController = MenuViewController()
         addChild(menuViewController)
-        view.insertSubview(menuViewController.view, at: 0) // Arkaya ekleyin
+        view.insertSubview(menuViewController.view, at: 0)
         menuViewController.didMove(toParent: self)
     }
 
-    // Menüyü aç/kapa
+    
     func toggleMenu() {
         isMenuOpen = !isMenuOpen
         let scale: CGFloat = isMenuOpen ? 0.7 : 1.0

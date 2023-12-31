@@ -37,7 +37,7 @@ extension SuccessViewController {
 //MARK: - Selector
 extension SuccessViewController {
     @objc private func backButtonTapped(_ sender: UIButton) {
-        let mainTabbarController: UITabBarController = MainTabbarController()
+        let containerViewController: UIViewController = ContainerViewController()
         
         if let windowsScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let scneDelegate = windowsScene.delegate as? SceneDelegate, let window = scneDelegate.window {
@@ -46,7 +46,7 @@ extension SuccessViewController {
                 let oldState = UIView.areAnimationsEnabled
                 
                 UIView.setAnimationsEnabled(false)
-                window.rootViewController = mainTabbarController
+                window.rootViewController = containerViewController
                 UIView.setAnimationsEnabled(oldState)
             })
         }
