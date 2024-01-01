@@ -8,7 +8,6 @@
 import UIKit
 
 class ContainerViewController: UIViewController, HomeViewMenuProtocol {
-
     private var mainTabBarController: MainTabbarController!
     private var menuViewController: MenuViewController!
 
@@ -17,12 +16,10 @@ class ContainerViewController: UIViewController, HomeViewMenuProtocol {
     private let menuWidth: CGFloat = 250 // Menü genişliği
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupMainTabBarController()
 
-        
         setupMenuViewController()
-       
     }
 
     private func setupMainTabBarController() {
@@ -30,10 +27,10 @@ class ContainerViewController: UIViewController, HomeViewMenuProtocol {
         addChild(mainTabBarController)
         view.addSubview(mainTabBarController.view)
         mainTabBarController.didMove(toParent: self)
-        
+
         if let homeVC = mainTabBarController.viewControllers?[0].children.first as? HomeViewController {
-              homeVC.delegate = self
-          }
+            homeVC.delegate = self
+        }
     }
 
     private func setupMenuViewController() {
@@ -41,9 +38,9 @@ class ContainerViewController: UIViewController, HomeViewMenuProtocol {
         addChild(menuViewController)
         view.insertSubview(menuViewController.view, at: 0)
         menuViewController.didMove(toParent: self)
+        menuViewController.delegate = self
     }
 
-    
     func toggleMenu() {
         isMenuOpen = !isMenuOpen
         let scale: CGFloat = isMenuOpen ? 0.7 : 1.0
@@ -54,8 +51,29 @@ class ContainerViewController: UIViewController, HomeViewMenuProtocol {
             self.mainTabBarController.view.frame.origin.x = xOffset
         }
     }
+
     func didTabMenuButton() {
         toggleMenu()
     }
 }
 
+// MARK: - MenuViewControllerDelegate
+
+extension ContainerViewController: MenuViewControllerDelegate {
+    func didSelectMenuItem(tag: Int) {
+        toggleMenu()
+        switch tag {
+        case 1:
+            mainTabBarController.selectedIndex = 2
+        case 2:
+            let walletVC = WalletsViewController()
+            if let navController = mainTabBarController.selectedViewController as? UINavigationController {
+                navController.isNavigationBarHidden = true
+                navController.pushViewController(walletVC, animated: true)
+            }
+        default:
+            let favoriteVC = FavoriteViewController()
+            navigationController?.pushViewController(favoriteVC, animated: true)
+        }
+    }
+}

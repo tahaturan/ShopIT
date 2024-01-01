@@ -40,6 +40,7 @@ protocol HomeViewMenuProtocol {
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async {
             self.updateUI()
+            self.navigationController?.isNavigationBarHidden = false
         }
     }
 }

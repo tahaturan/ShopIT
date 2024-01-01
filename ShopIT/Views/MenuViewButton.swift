@@ -42,27 +42,31 @@ class MenuViewButton: UIButton {
         case .favorite:
             setTitle("My Favorites", for: .normal)
             setImage(UIImage(systemName: "heart.square.fill"), for: .normal)
+            self.tag = 1
         case .wallets:
             setTitle("Wallets", for: .normal)
             setImage(UIImage(systemName: "creditcard.fill"), for: .normal)
+            self.tag = 2
         case .orders:
             setTitle("My Orders", for: .normal)
             setImage(UIImage(systemName: "bag.fill"), for: .normal)
-
+            self.tag = 3
         case .aboutUs:
             setTitle("About us", for: .normal)
             setImage(UIImage(systemName: "doc.text.fill"), for: .normal)
-
+            self.tag = 4
         case .privacyPolicy:
             setTitle("Privacy policy", for: .normal)
             setImage(UIImage(systemName: "lock.doc.fill"), for: .normal)
-
+            self.tag = 5
         case .settings:
             setTitle("Settings", for: .normal)
             setImage(UIImage(systemName: "gearshape.circle.fill"), for: .normal)
+            self.tag = 6
         case .logOut:
             setTitle("Log out", for: .normal)
             setImage(UIImage(systemName: "rectangle.portrait.and.arrow.forward.fill"), for: .normal)
+            self.tag = 7
         }
     }
 }

@@ -7,7 +7,9 @@
 
 import UIKit
 
-
+protocol MenuViewControllerDelegate {
+    func didSelectMenuItem(tag: Int)
+}
 
 class MenuViewController: UIViewController {
     //MARK: - Properties
@@ -59,11 +61,12 @@ class MenuViewController: UIViewController {
         imageView.backgroundColor = .clear
         return imageView
     }()
+    var delegate: MenuViewControllerDelegate?
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-       
+        buttonTargets()
     }
 }
 //MARK: - Helper
@@ -71,5 +74,22 @@ extension MenuViewController {
     private func setupUI(){
         view.backgroundColor = .viewBackround
         MenuViewLayout.setupLayout(in: self)
+    }
+    private func buttonTargets() {
+        favoriteButton.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
+        walletsButton.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
+        ordersButton.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
+        aboutUsButton.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
+        privacyButton.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
+        settingsButton.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
+        logOutButton.addTarget(self, action: #selector(menuButtonTapped(_:)), for: .touchUpInside)
+    }
+}
+
+//MARK: - Selector
+extension MenuViewController {
+    @objc private func menuButtonTapped(_ sender: UIButton) {
+        delegate?.didSelectMenuItem(tag: sender.tag)
+        
     }
 }

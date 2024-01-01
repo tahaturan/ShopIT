@@ -36,6 +36,10 @@
 		5F54B7912B3D8663004640F8 /* MenuViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7902B3D8663004640F8 /* MenuViewLayout.swift */; };
 		5F54B7952B3E8A2B004640F8 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7942B3E8A2B004640F8 /* ContainerViewController.swift */; };
 		5F54B7972B3FE935004640F8 /* MenuViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7962B3FE935004640F8 /* MenuViewButton.swift */; };
+		5F54B79A2B414593004640F8 /* WalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7992B414593004640F8 /* WalletsViewController.swift */; };
+		5F54B7A02B4148C1004640F8 /* CreditCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B79F2B4148C1004640F8 /* CreditCartModel.swift */; };
+		5F54B7A22B432404004640F8 /* WalletViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7A12B432404004640F8 /* WalletViewLayout.swift */; };
+		5F54B7A42B4342CC004640F8 /* CreditCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7A32B4342CC004640F8 /* CreditCardCollectionViewCell.swift */; };
 		5F60FF2A2B2AA90400E92218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60FF292B2AA90400E92218 /* AppDelegate.swift */; };
 		5F60FF2C2B2AA90400E92218 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60FF2B2B2AA90400E92218 /* SceneDelegate.swift */; };
 		5F60FF332B2AA90500E92218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F60FF322B2AA90500E92218 /* Assets.xcassets */; };
@@ -123,6 +127,10 @@
 		5F54B7902B3D8663004640F8 /* MenuViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewLayout.swift; sourceTree = "<group>"; };
 		5F54B7942B3E8A2B004640F8 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		5F54B7962B3FE935004640F8 /* MenuViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewButton.swift; sourceTree = "<group>"; };
+		5F54B7992B414593004640F8 /* WalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewController.swift; sourceTree = "<group>"; };
+		5F54B79F2B4148C1004640F8 /* CreditCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCartModel.swift; sourceTree = "<group>"; };
+		5F54B7A12B432404004640F8 /* WalletViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewLayout.swift; sourceTree = "<group>"; };
+		5F54B7A32B4342CC004640F8 /* CreditCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F60FF262B2AA90400E92218 /* ShopIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F60FF292B2AA90400E92218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F60FF2B2B2AA90400E92218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -270,6 +278,15 @@
 			path = MenuViewControllers;
 			sourceTree = "<group>";
 		};
+		5F54B7982B414579004640F8 /* WalletViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F54B7992B414593004640F8 /* WalletsViewController.swift */,
+				5F54B7A12B432404004640F8 /* WalletViewLayout.swift */,
+			);
+			path = WalletViewControllers;
+			sourceTree = "<group>";
+		};
 		5F60FF1D2B2AA90400E92218 = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +381,7 @@
 		5F60FF5D2B2AAAD800E92218 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5F54B7982B414579004640F8 /* WalletViewControllers */,
 				5F54B78D2B3D860E004640F8 /* MenuViewControllers */,
 				5F54B7812B3D4245004640F8 /* SuccessViewControllers */,
 				5F54B7762B3C0C0C004640F8 /* CheckOutViewControllers */,
@@ -402,6 +420,7 @@
 				5F54B77D2B3C4E05004640F8 /* BilingInfomationView.swift */,
 				5F54B77F2B3C986C004640F8 /* SwipeButton.swift */,
 				5F54B7962B3FE935004640F8 /* MenuViewButton.swift */,
+				5F54B7A32B4342CC004640F8 /* CreditCardCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -412,6 +431,7 @@
 				5FE2FCC12B310CBC004BB731 /* ProductModel.swift */,
 				5F54B7612B380C0A004640F8 /* CartItem.swift */,
 				5F54B7632B380CAC004640F8 /* FavoriteItem.swift */,
+				5F54B79F2B4148C1004640F8 /* CreditCartModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -612,6 +632,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FE2FCDF2B327DF8004BB731 /* SearchViewLayout.swift in Sources */,
+				5F54B7A42B4342CC004640F8 /* CreditCardCollectionViewCell.swift in Sources */,
 				5FE2FCB82B2FAC01004BB731 /* BasketViewController.swift in Sources */,
 				5F54B7952B3E8A2B004640F8 /* ContainerViewController.swift in Sources */,
 				5F54B77A2B3C0D9D004640F8 /* CheckoutViewLayout.swift in Sources */,
@@ -625,6 +646,7 @@
 				5FE2FCB42B2FABBA004BB731 /* MainTabbarController.swift in Sources */,
 				5FE2FCD72B3182A0004BB731 /* HomeCollectionViewCell.swift in Sources */,
 				5FE2FCCF2B3150F1004BB731 /* APIEndpoint.swift in Sources */,
+				5F54B7A22B432404004640F8 /* WalletViewLayout.swift in Sources */,
 				5FE2FCDC2B3278F7004BB731 /* SearchViewController.swift in Sources */,
 				5FE2FCD32B3152A3004BB731 /* NetworkService.swift in Sources */,
 				5FE2FCCC2B3117D9004BB731 /* HomeViewLayout.swift in Sources */,
@@ -640,8 +662,10 @@
 				5F60FF2C2B2AA90400E92218 /* SceneDelegate.swift in Sources */,
 				5FE2FCC72B310E77004BB731 /* ProductService.swift in Sources */,
 				5F54B7592B36C5B1004640F8 /* DetailViewController.swift in Sources */,
+				5F54B7A02B4148C1004640F8 /* CreditCartModel.swift in Sources */,
 				5FE2FCA72B2C11F3004BB731 /* CustomTextField.swift in Sources */,
 				5F60FF6B2B2ACCE200E92218 /* CustomLabel.swift in Sources */,
+				5F54B79A2B414593004640F8 /* WalletsViewController.swift in Sources */,
 				5FE2FCB22B2ED121004BB731 /* CustomCheckButton.swift in Sources */,
 				5F54B7502B33F813004640F8 /* FilterViewController.swift in Sources */,
 				5F54B7782B3C0CE2004640F8 /* CheckoutViewController.swift in Sources */,

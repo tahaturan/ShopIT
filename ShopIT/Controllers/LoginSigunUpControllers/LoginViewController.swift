@@ -180,11 +180,13 @@ extension LoginViewController {
     }
     
     @objc private func loginButtonTapped() {
-        let mainTabbarController = ContainerViewController()
         
+        let containerVC = ContainerViewController()
+        let navController = UINavigationController(rootViewController: containerVC)
+        containerVC.navigationController?.isNavigationBarHidden = true
         if let windowsScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let scneDelegate = windowsScene.delegate as? SceneDelegate {
-            scneDelegate.window?.rootViewController = mainTabbarController
+            scneDelegate.window?.rootViewController = navController
         }
     }
 }
