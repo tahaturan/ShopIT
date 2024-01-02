@@ -75,5 +75,6 @@ struct AppTextConstants {
         static let searchViewTableID: String = "SearchTableViewCell"
         static let basketTableViewID: String = "BasketTableViewCell"
         static let creditCartCellID: String = "creditCartCollectionCell"
+        static let orderTableViewCell: String = "orderTableViewCell"
     }
 }

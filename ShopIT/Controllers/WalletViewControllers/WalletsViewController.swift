@@ -12,19 +12,55 @@ class WalletsViewController: UIViewController {
     let titleLabel: CustomLabel = CustomLabel(labelType: .title, text: "My Wallets")
     let credidCartList: [CreditCartModel] = CreditCartModel.dummyCartList
     var cardCollectionView: UICollectionView!
-    
+    let recentLabel: UILabel = {
+        let label = UILabel()
+        label.font = Theme.Font.normalBoldFont
+        label.textColor = .black
+        label.text = "Recent transactions"
+        return label
+    }()
+    var orderList: [OrderItem] = []
+    let realmService = RealmService()
+    var orderTableView: UITableView = UITableView()
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupCardCollectionView()
+        orderList = realmService.getOrderItems()
+        setupLayout()
     }
 }
 //MARK: - Helper
 extension WalletsViewController {
     private func setupUI() {
         view.backgroundColor = .viewBackround
-        WalletViewLayout.setupLayout(in: self)
+        view.addSubview(titleLabel)
+        
+        view.addSubview(recentLabel)
+        view.addSubview(orderTableView)
+        setupCardCollectionView()
+        setupOrderTableView()
+        
+    }
+    private func setupLayout() {
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+        cardCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(200)
+        }
+        recentLabel.snp.makeConstraints { make in
+            make.top.equalTo(cardCollectionView.snp.bottom).offset(20)
+            make.left.equalToSuperview().offset(10)
+        }
+        orderTableView.snp.makeConstraints { make in
+            make.top.equalTo(recentLabel.snp.bottom).offset(10)
+            make.left.right.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview()
+        }
     }
     private func setupCardCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -38,14 +74,19 @@ extension WalletsViewController {
         cardCollectionView.dataSource = self
         cardCollectionView.showsHorizontalScrollIndicator = false
         cardCollectionView.register(CreditCardCollectionViewCell.self, forCellWithReuseIdentifier: AppTextConstants.CellIDs.creditCartCellID)
-        view.addSubview(cardCollectionView)
         cardCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        cardCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(20)
-            
-            make.height.equalTo(200)
-        }
+        view.addSubview(cardCollectionView)
+    }
+    private func setupOrderTableView() {
+        orderTableView.rowHeight = 110
+        orderTableView.delegate = self
+        orderTableView.dataSource = self
+        orderTableView.register(OrderTableViewCell.self, forCellReuseIdentifier: AppTextConstants.CellIDs.orderTableViewCell)
+        orderTableView.isEditing = false
+        orderTableView.separatorStyle = .none
+        orderTableView.backgroundColor = .viewBackround
+        
+        
     }
 }
 //MARK: - UICollectionView Delegate/DataSource
@@ -60,4 +101,21 @@ extension WalletsViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.configureCell(in: cartModel)
         return cell
     }
+}
+//MARK: - UITableView  Delegate/DataSource
+extension WalletsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return orderList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = orderTableView.dequeueReusableCell(withIdentifier: AppTextConstants.CellIDs.orderTableViewCell, for: indexPath) as! OrderTableViewCell
+        let order = orderList[indexPath.row]
+        cell.configureCell(order: order)
+        return cell
+    }
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
+
 }

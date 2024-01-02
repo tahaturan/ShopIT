@@ -9,6 +9,7 @@ import UIKit
 
 class CheckoutViewController: UIViewController {
     //MARK: - Properties
+    let realmService = RealmService()
     var subTotal = 0.0
     
     let addressLabel: CustomLabel = CustomLabel(labelType: .title, text: "Delivery address")
@@ -65,6 +66,8 @@ extension CheckoutViewController {
 //MARK: -
 extension CheckoutViewController: SwipeButtonProtocolDelagate {
     func didFinishSwipe() {
+        realmService.checkoutCart()
+        
         let successVC = SuccessViewController()
         navigationController?.pushViewController(successVC, animated: true)
     }

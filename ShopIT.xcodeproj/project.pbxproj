@@ -40,6 +40,9 @@
 		5F54B7A02B4148C1004640F8 /* CreditCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B79F2B4148C1004640F8 /* CreditCartModel.swift */; };
 		5F54B7A22B432404004640F8 /* WalletViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7A12B432404004640F8 /* WalletViewLayout.swift */; };
 		5F54B7A42B4342CC004640F8 /* CreditCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7A32B4342CC004640F8 /* CreditCardCollectionViewCell.swift */; };
+		5F54B7A62B43F612004640F8 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7A52B43F612004640F8 /* OrderItem.swift */; };
+		5F54B7A82B43F955004640F8 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7A72B43F955004640F8 /* OrderTableViewCell.swift */; };
+		5F54B7AA2B443FED004640F8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54B7A92B443FED004640F8 /* UserModel.swift */; };
 		5F60FF2A2B2AA90400E92218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60FF292B2AA90400E92218 /* AppDelegate.swift */; };
 		5F60FF2C2B2AA90400E92218 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60FF2B2B2AA90400E92218 /* SceneDelegate.swift */; };
 		5F60FF332B2AA90500E92218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F60FF322B2AA90500E92218 /* Assets.xcassets */; };
@@ -131,6 +134,9 @@
 		5F54B79F2B4148C1004640F8 /* CreditCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCartModel.swift; sourceTree = "<group>"; };
 		5F54B7A12B432404004640F8 /* WalletViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewLayout.swift; sourceTree = "<group>"; };
 		5F54B7A32B4342CC004640F8 /* CreditCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F54B7A52B43F612004640F8 /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		5F54B7A72B43F955004640F8 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		5F54B7A92B443FED004640F8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5F60FF262B2AA90400E92218 /* ShopIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F60FF292B2AA90400E92218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F60FF2B2B2AA90400E92218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -421,6 +427,7 @@
 				5F54B77F2B3C986C004640F8 /* SwipeButton.swift */,
 				5F54B7962B3FE935004640F8 /* MenuViewButton.swift */,
 				5F54B7A32B4342CC004640F8 /* CreditCardCollectionViewCell.swift */,
+				5F54B7A72B43F955004640F8 /* OrderTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -432,6 +439,8 @@
 				5F54B7612B380C0A004640F8 /* CartItem.swift */,
 				5F54B7632B380CAC004640F8 /* FavoriteItem.swift */,
 				5F54B79F2B4148C1004640F8 /* CreditCartModel.swift */,
+				5F54B7A52B43F612004640F8 /* OrderItem.swift */,
+				5F54B7A92B443FED004640F8 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -655,6 +664,7 @@
 				5F54B76B2B3847DF004640F8 /* BasketTableViewCell.swift in Sources */,
 				5F60FF2A2B2AA90400E92218 /* AppDelegate.swift in Sources */,
 				5F60FF672B2AC98800E92218 /* Theme.swift in Sources */,
+				5F54B7A82B43F955004640F8 /* OrderTableViewCell.swift in Sources */,
 				5FE2FCC22B310CBC004BB731 /* ProductModel.swift in Sources */,
 				5F54B7562B350C66004640F8 /* CustomSliderView.swift in Sources */,
 				5F54B77E2B3C4E05004640F8 /* BilingInfomationView.swift in Sources */,
@@ -662,6 +672,7 @@
 				5F60FF2C2B2AA90400E92218 /* SceneDelegate.swift in Sources */,
 				5FE2FCC72B310E77004BB731 /* ProductService.swift in Sources */,
 				5F54B7592B36C5B1004640F8 /* DetailViewController.swift in Sources */,
+				5F54B7A62B43F612004640F8 /* OrderItem.swift in Sources */,
 				5F54B7A02B4148C1004640F8 /* CreditCartModel.swift in Sources */,
 				5FE2FCA72B2C11F3004BB731 /* CustomTextField.swift in Sources */,
 				5F60FF6B2B2ACCE200E92218 /* CustomLabel.swift in Sources */,
@@ -687,6 +698,7 @@
 				5FE2FCB02B2ECE54004BB731 /* SignUpViewController.swift in Sources */,
 				5F54B7752B3B4590004640F8 /* ProfileInfoView.swift in Sources */,
 				5FE2FCD12B315221004BB731 /* NetworkRequest.swift in Sources */,
+				5F54B7AA2B443FED004640F8 /* UserModel.swift in Sources */,
 				5F54B78F2B3D861F004640F8 /* MenuViewController.swift in Sources */,
 				5F54B7642B380CAC004640F8 /* FavoriteItem.swift in Sources */,
 				5F54B7522B33F85D004640F8 /* FilterViewLayout.swift in Sources */,

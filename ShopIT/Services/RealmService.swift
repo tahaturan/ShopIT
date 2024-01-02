@@ -71,4 +71,28 @@ class RealmService {
             realm.delete(favoriteItem)
         })
     }
+    private func convertCartToOrder(cartItems: [CartItem]) {
+        try! realm.write({
+            for cartItem in cartItems {
+                let orderItem = OrderItem()
+                orderItem.productId = cartItem.productId
+                orderItem.name = cartItem.name
+                orderItem.quantity = cartItem.quantity
+                orderItem.imageUrl = cartItem.imageUrl
+                orderItem.price = cartItem.price
+                orderItem.date = Date()
+                
+                realm.add(orderItem)
+                
+                realm.delete(cartItem)
+            }
+        })
+    }
+    func checkoutCart() {
+        let allCartItems = getCartItems()
+        convertCartToOrder(cartItems: allCartItems)
+    }
+    func getOrderItems() -> [OrderItem] {
+        return Array(realm.objects(OrderItem.self))
+    }
 }
