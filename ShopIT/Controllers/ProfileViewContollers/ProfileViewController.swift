@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     //MARK: - Properties
+    let user = UserModel.dummyUser
     let profileBackrounImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .profileBack
@@ -25,8 +26,8 @@ class ProfileViewController: UIViewController {
         imageView.layer.cornerRadius = Theme.Size.profileImageViewSize.width / 2
         return imageView
     }()
-    let nameLabel: CustomLabel = CustomLabel(labelType: .title, text: "Muhammed Taha Turan")
-    let emailLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: "taha@gmail.com")
+    lazy var nameLabel: CustomLabel = CustomLabel(labelType: .title, text: user.name)
+    lazy var emailLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: user.email)
     let progressButton: ProfileViewButton = ProfileViewButton(type: .progressOrder)
     let promoCodeButton: ProfileViewButton = ProfileViewButton(type: .promocodes)
     let reviewesButton: ProfileViewButton = ProfileViewButton(type: .reviewes)

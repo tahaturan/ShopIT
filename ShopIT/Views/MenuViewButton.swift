@@ -15,6 +15,11 @@ enum ButtonItemType {
     case privacyPolicy
     case settings
     case logOut
+    case emailSupport
+    case faq
+    case privacyStetesment
+    case notification
+    case update
 }
 
 class MenuViewButton: UIButton {
@@ -67,6 +72,22 @@ class MenuViewButton: UIButton {
             setTitle("Log out", for: .normal)
             setImage(UIImage(systemName: "rectangle.portrait.and.arrow.forward.fill"), for: .normal)
             self.tag = 7
+        case .emailSupport:
+            setTitle("Email Support", for: .normal)
+            setImage(UIImage(systemName: "envelope.fill"), for: .normal)
+        case .faq:
+            setTitle("FAQ", for: .normal)
+            setImage(UIImage(systemName: "questionmark.app.fill"), for: .normal)
+        case .privacyStetesment:
+            setTitle("Privacy Stetesment", for: .normal)
+            setImage(UIImage(systemName: "lock.doc.fill"), for: .normal)
+        case .notification:
+            setTitle("Notification", for: .normal)
+            setImage(UIImage(systemName: "bell.fill"), for: .normal)
+        case .update:
+            setTitle("Update", for: .normal)
+            setImage(UIImage(systemName: "arrow.triangle.2.circlepath.circle.fill"), for: .normal)
+            
         }
     }
 }

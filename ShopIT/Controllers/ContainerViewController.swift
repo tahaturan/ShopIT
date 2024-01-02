@@ -71,9 +71,14 @@ extension ContainerViewController: MenuViewControllerDelegate {
                 navController.isNavigationBarHidden = true
                 navController.pushViewController(walletVC, animated: true)
             }
+        case 6:
+            let settingsVC = SettingsViewController()
+            if let navController = mainTabBarController.selectedViewController as? UINavigationController {
+                navController.isNavigationBarHidden = true
+                navController.pushViewController(settingsVC, animated: true)
+            }
         default:
-            let favoriteVC = FavoriteViewController()
-            navigationController?.pushViewController(favoriteVC, animated: true)
+           print("hazirlanmadi")
         }
     }
 }

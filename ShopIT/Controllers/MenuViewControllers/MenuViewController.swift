@@ -13,6 +13,7 @@ protocol MenuViewControllerDelegate {
 
 class MenuViewController: UIViewController {
     //MARK: - Properties
+    let user = UserModel.dummyUser
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -21,15 +22,15 @@ class MenuViewController: UIViewController {
         imageView.layer.cornerRadius = Theme.Size.profileImageViewSize.width / 4
         return imageView
     }()
-    let nameLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
        let label = UILabel()
-        label.text = "Taha Turan"
+        label.text = user.name
         label.font = Theme.Font.normalBoldFont
         return label
     }()
-    let jopLabel: UILabel = {
+    lazy var jopLabel: UILabel = {
         let label = UILabel()
-         label.text = "iOS Developer"
+        label.text = user.jop
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.textColor = .gray
          return label
