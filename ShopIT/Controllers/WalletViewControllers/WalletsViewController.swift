@@ -9,14 +9,14 @@ import UIKit
 
 class WalletsViewController: UIViewController {
     //MARK: - Properties
-    let titleLabel: CustomLabel = CustomLabel(labelType: .title, text: "My Wallets")
+    let titleLabel: CustomLabel = CustomLabel(labelType: .title, text: AppTextConstants.WalletsViewController.myWallets)
     let credidCartList: [CreditCartModel] = CreditCartModel.dummyCartList
     var cardCollectionView: UICollectionView!
     let recentLabel: UILabel = {
         let label = UILabel()
         label.font = Theme.Font.normalBoldFont
         label.textColor = .black
-        label.text = "Recent transactions"
+        label.text = AppTextConstants.WalletsViewController.recentTransactions
         return label
     }()
     var orderList: [OrderItem] = []

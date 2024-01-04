@@ -9,7 +9,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     //MARK: - Properties
-    let titleLabel: CustomLabel = CustomLabel(labelType: .title, text: "Settings")
+    let titleLabel: CustomLabel = CustomLabel(labelType: .title, text: AppTextConstants.SettingsViewController.settings)
     let emailSupportButton: MenuViewButton = MenuViewButton(type: .emailSupport)
     let faqButton: MenuViewButton = MenuViewButton(type: .faq)
     let privacyButton: MenuViewButton = MenuViewButton(type: .privacyStetesment)

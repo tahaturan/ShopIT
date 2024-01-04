@@ -70,6 +70,35 @@ struct AppTextConstants {
         static let searchResults = NSLocalizedString("Search results showing for ", comment: "")
         static let recentSearches = NSLocalizedString("Recent searches", comment: "")
     }
+    struct SettingsViewController {
+        static let settings = NSLocalizedString("Settings", comment: "")
+    }
+    struct WalletsViewController {
+        static let myWallets = NSLocalizedString("My Wallets", comment: "")
+        static let recentTransactions = NSLocalizedString("Recent transactions", comment: "")
+    }
+    struct SuccessViewController {
+        static let congratulation = NSLocalizedString("Congratulation!!!", comment: "")
+        static let paymentIsTheTransfer = NSLocalizedString("Payment is the transfer of money services in exchange product or Payments", comment: "")
+        static let backToHome = NSLocalizedString("Back to Home", comment: "")
+        static let yourReceipt = NSLocalizedString("Get your receipt", comment: "")
+    }
+    struct CheckoutViewController {
+        static let deliveryAddress = NSLocalizedString("Delivery address", comment: "")
+        static let bilingInformation = NSLocalizedString("Biling information", comment: "")
+        static let paymentMethod = NSLocalizedString("Payment Method", comment: "")
+        static let checkout = NSLocalizedString("Checkout", comment: "")
+    }
+    struct ProfileViewController {
+        static let personalInformation = NSLocalizedString("Personal Information", comment: "")
+        static let profile = NSLocalizedString("Profile", comment: "")
+        static let name = NSLocalizedString("Name:", comment: "")
+        static let email = NSLocalizedString("Email:", comment: "")
+        static let location = NSLocalizedString("Location:", comment: "")
+        static let zipCode = NSLocalizedString("Zip Code:", comment: "")
+        static let phoneNumber = NSLocalizedString("Phone Number:", comment: "")
+        
+    }
     struct CellIDs {
         static let homeCollectionViewID: String = "HomeCollectionID"
         static let searchViewTableID: String = "SearchTableViewCell"

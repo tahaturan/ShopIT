@@ -12,12 +12,12 @@ class CheckoutViewController: UIViewController {
     let realmService = RealmService()
     var subTotal = 0.0
     
-    let addressLabel: CustomLabel = CustomLabel(labelType: .title, text: "Delivery address")
+    let addressLabel: CustomLabel = CustomLabel(labelType: .title, text: AppTextConstants.CheckoutViewController.deliveryAddress)
     let homeAddressView: AddressView = AddressView(type: .home)
     let officeAddressView: AddressView = AddressView(type: .office)
-    let infoLabel: CustomLabel = CustomLabel(labelType: .title, text: "Biling information")
+    let infoLabel: CustomLabel = CustomLabel(labelType: .title, text: AppTextConstants.CheckoutViewController.bilingInformation)
     lazy var infoView: BilingInfomationView = BilingInfomationView(subTotal: subTotal)
-    let paymentLabel: CustomLabel = CustomLabel(labelType: .title, text: "Payment Method")
+    let paymentLabel: CustomLabel = CustomLabel(labelType: .title, text:AppTextConstants.CheckoutViewController.paymentMethod )
     lazy var visaButton: UIButton = createPaymentButton(image: .visa)
     lazy var masterCartButton: UIButton = createPaymentButton(image: .mastercard)
     lazy var paypalButton: UIButton = createPaymentButton(image: .paypal)
@@ -41,7 +41,7 @@ class CheckoutViewController: UIViewController {
 //MARK: - Helper
 extension CheckoutViewController {
     private func setupUI() {
-        navigationItem.title = "Checkout"
+        navigationItem.title = AppTextConstants.CheckoutViewController.checkout
         view.backgroundColor = .viewBackround
         navigationController?.navigationBar.backIndicatorImage = .backIcon
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = .backIcon

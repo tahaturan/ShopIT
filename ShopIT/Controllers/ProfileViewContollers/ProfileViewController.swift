@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.font = Theme.Font.normalBoldFont
         label.textColor = .black
-        label.text = "Personal Information"
+        label.text = AppTextConstants.ProfileViewController.personalInformation
         return label
     }()
     lazy var informationView: ProfileInfoView = ProfileInfoView()
@@ -59,6 +59,6 @@ extension ProfileViewController {
     private func setupUI() {
         view.backgroundColor = .viewBackround
         ProfileViewLayout.setupProfileLayout(on: self)
-        navigationItem.title = "Profile"
+        navigationItem.title = AppTextConstants.ProfileViewController.profile
     }
 }

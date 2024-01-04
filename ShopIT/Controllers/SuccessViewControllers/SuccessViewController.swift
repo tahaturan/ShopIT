@@ -12,10 +12,10 @@ import SnapKit
 class SuccessViewController: UIViewController {
     //MARK: - Propeties
     let successAnimationView: LottieAnimationView = LottieAnimationView(name: "SuccessLottie")
-    let titleLabel: CustomLabel = CustomLabel(labelType: .title, text: "Congratulation!!!")
-    let subTitleLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: "Payment is the transfer of money services in exchange product or Payments")
-    let receiptButton: PrimaryButton = PrimaryButton(title: "Get your receipt")
-    let backHomeButton: PrimaryButton = PrimaryButton(title: "Back to Home", isBack: true)
+    let titleLabel: CustomLabel = CustomLabel(labelType: .title, text: AppTextConstants.SuccessViewController.congratulation)
+    let subTitleLabel: CustomLabel = CustomLabel(labelType: .subTitle, text: AppTextConstants.SuccessViewController.paymentIsTheTransfer)
+    let receiptButton: PrimaryButton = PrimaryButton(title: AppTextConstants.SuccessViewController.yourReceipt )
+    let backHomeButton: PrimaryButton = PrimaryButton(title: AppTextConstants.SuccessViewController.backToHome , isBack: true)
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()

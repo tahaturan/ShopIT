@@ -15,15 +15,15 @@ fileprivate enum InfoLabelType {
 }
 class ProfileInfoView: UIView {
     let user = UserModel.dummyUser
-   private lazy var nameLabel: UILabel = createLabel(text: "Name:", type: .text)
+    private lazy var nameLabel: UILabel = createLabel(text: AppTextConstants.ProfileViewController.name, type: .text)
     private lazy var nameValue: UILabel = createLabel(text: user.name, type: .value)
-   private lazy var emailLabel = createLabel(text: "Email:", type: .text)
+   private lazy var emailLabel = createLabel(text: AppTextConstants.ProfileViewController.email, type: .text)
     private lazy var emailValue = createLabel(text: user.email, type: .value)
-   private lazy var locationLabel = createLabel(text: "Location:", type: .text)
+   private lazy var locationLabel = createLabel(text: AppTextConstants.ProfileViewController.location, type: .text)
     private lazy var locationValue = createLabel(text: user.city, type: .value)
-   private lazy var zipCodeLabel = createLabel(text: "Zip Code:", type: .text)
+   private lazy var zipCodeLabel = createLabel(text: AppTextConstants.ProfileViewController.zipCode, type: .text)
     private lazy var zipCodeValue = createLabel(text: user.zipCode, type: .value)
-   private lazy var numberLabel = createLabel(text: "Phone Number:", type: .text)
+   private lazy var numberLabel = createLabel(text: AppTextConstants.ProfileViewController.phoneNumber, type: .text)
     private lazy var numberValue = createLabel(text: user.phoneNumber, type: .value)
     
     init() {
