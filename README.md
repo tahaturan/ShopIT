@@ -1,29 +1,21 @@
-# CoffeeConnect
+# ShopIT
 
-<img src="Images/logo.png" width="150">
-
-## Hakkında
-
-`CoffeeConnect`, kullanıcıların kolayca kahve siparişi verebildikleri, istediklerinde diğer kullanıcılarla paylaşımda bulunabildikleri ve kendi istek listelerini oluşturabildikleri bir iOS uygulamasıdır. Uygulama, MVC (Model-View-Controller) tasarım deseni kullanılarak geliştirilmiştir. Tamamen programatik olarak hazırlanmıştır; yani storyboard kullanılmadan geliştirilmiştir. Kullanıcı bilgileri ve sipariş detayları Firebase üzerinden yönetilmektedir.
+`ShopIT`, Swift ile programatik olarak ve storyboard kullanmadan geliştirilmiştir. Uygulama, sade ve anlaşılır bir kullanıcı arayüzüne sahip olup, MVC (Model-View-Controller) tasarım deseni kullanılarak yapılandırılmıştır. Portföy sergilemek amacıyla öncelikle UI tasarımına odaklanarak hazırlanmıştır. Kullanıcıların alışveriş deneyimlerini kişiselleştirebilmeleri için sepete ve favorilere ürün ekleme özellikleri mevcuttur.
 
 ## Özellikler
 
-- **Programatik Arayüz**: Uygulama, storyboard kullanmadan tamamen programatik bir şekilde hazırlandı.
-- **Firebase Entegrasyonu**: FirebaseAuth, FirebaseFirestore ve FirebaseStorage ile veritabanı ve depolama işlemleri gerçekleştirilmektedir.
-- **Kahve Siparişi**: Kullanıcılar, uygulama üzerinden kahve siparişi verebilirler.
-- **Sosyal Paylaşım**: Kullanıcılar, kendi postlarını oluşturup diğer kullanıcılarla paylaşabilirler.
-- **Istek Listesi**: Kullanıcılar, favori kahvelerini veya denemek istedikleri kahveleri bir istek listesinde saklayabilirler.
-- **Kullanıcı Girişi**: Kullanıcılar, uygulamaya kendi hesap bilgileri ile giriş yapabilirler.
-- **MVC Tasarım Deseni**: Uygulama, MVC tasarım deseni kullanılarak organize edilmiştir.
-- **Çoklu Dil Desteği**: Uygulama hem Türkçe hem de İngilizce dil seçeneklerini desteklemektedir.
+- **Sade ve Anlaşılır Arayüz:** Kullanıcıların rahatça gezinebilmeleri ve alışveriş yapabilmeleri için intuitif bir tasarım.
+- **Sepet ve Favoriler:** Kullanıcılar, beğendikleri ürünleri favorilere ekleyebilir ve satın almak üzere sepete atabilir.
+- **Realm Veritabanı:** Ürünlerin sepete ve favorilere eklenmesi için yerel olarak Realm veritabanı kullanılmıştır. Bu sayede uygulama, cloud bir veritabanına bağlı olmadan çalışabilir.
+- **Alamofire ile API Entegrasyonu:** Uygulama, ürün bilgilerini çekmek için internetten API kullanır ve bu işlemler Alamofire ile gerçekleştirilir.
+- **MVC Tasarım Deseni:** Uygulama, esneklik ve kolay bakım için MVC tasarım deseni ile yapılandırılmıştır.
 
 ## Kullandığım Paketler
-
-- **SnapKit**: Programatik arayüz oluşturma için kullanılmıştır.
-- **FirebaseAuth**: Kullanıcı giriş işlemleri için kullanılmıştır.
-- **FirebaseFirestore**: Veritabanı işlemleri için kullanılmıştır.
-- **FirebaseStorage**: Dosya ve resim depolama işlemleri için kullanılmıştır.
-- **IQKeyboardManager**: Klavye davranışlarını yönetmek ve klavye ile ilgili kullanıcı deneyimini iyileştirmek için kullanılmıştır.
+- **Alamofire:** HTTP ağ işlemleri için kullanılan bir Swift tabanlı HTTP networking kütüphanesi.
+- **IQKeyboardManager:** Klavye görünürlüğünü yönetmek ve kullanıcı deneyimini geliştirmek için kullanılan bir kütüphane.
+- **Realm:** Veritabanı yönetimi için kullanılan mobil uygulamalar için tasarlanmış bir veritabanı motoru.
+- **SDWebImage:** Asenkron resim indirme ve önbelleğe alma işlemleri için kullanılan bir kütüphane.
+- **SnapKit:** Swift için bir Auto Layout DSL, kod ile constraints yazmayı kolay ve anlaşılır hale getirir.
 
 # Uygulama Görüntüleri
 
