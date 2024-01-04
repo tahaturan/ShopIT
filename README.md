@@ -25,7 +25,7 @@
 
 | Login | SignUp | Home |
 |-------------------|-------------------|-------------------|
-| <img src="Images/login.png" width="300"> | <img src="Images/signUp.png" width="300"> | <img src="Images/home.png" width="300"> |
+| <img src="Images/login.png" width="300"> | <img src="Images/signUp.png" width="300"> | <img src="Images/homee.png" width="300"> |
 
 | Filter | Search | Favorite |
 |-------------------|-------------------|-------------------|
